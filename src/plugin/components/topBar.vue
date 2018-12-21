@@ -2,7 +2,10 @@
 	<div class="comp-top-bar">
 		<draggable class="top-bar-panel" v-model="myArray" :options="option">
 			<div class="top-bar-item" v-for="element in myArray" :key="element">
-				<i class="iconfont" v-html="element"></i>
+				<i class="iconfont" v-if="element=='text'">&#xe62c;</i>
+				<i class="iconfont" v-if="element=='img'">&#xe62b;</i>
+				<i class="iconfont" v-if="element=='module'">&#xe62a;</i>
+				<i class="iconfont" v-if="element=='del'">&#xe644;</i>
 			</div>
 		</draggable>
 	</div>
@@ -18,7 +21,7 @@ export default {
 	},
 	data() {
 		return {
-			myArray: ['&#xe62c;', '&#xe62b;', '&#xe62a;'],
+			myArray: ['text', 'img', 'module', 'del'],
 			option: {
 				group: { name: 'people', pull: 'clone', put: false },
 				sort: false
