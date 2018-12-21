@@ -31,6 +31,8 @@ export default {
 	min-width: 100vw;
 	max-width: 100vw;
 	border-top: 1px solid #7d7d7d;
+	box-sizing: border-box;
+	overflow-x: auto;
 	.bottom-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;

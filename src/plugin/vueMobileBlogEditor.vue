@@ -1,19 +1,26 @@
 <template>
 	<div class="vue-mobile-blog-editor">
 		<top-bar></top-bar>
+		<drag-list></drag-list>
 		<bottom-bar></bottom-bar>
 	</div>
 </template>
 
 <script>
 import topBar from './components/topBar'
+import dragList from './components/dragList'
 import bottomBar from './components/bottomBar'
 export default {
 	name: 'vueMobileBlogEditor',
 	components: {
 		topBar,
+		dragList,
 		bottomBar
-	}
+	},
+	data() {
+		return {}
+	},
+	methods: {}
 }
 </script>
 

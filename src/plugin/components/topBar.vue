@@ -1,23 +1,31 @@
 <template>
 	<div class="comp-top-bar">
-		<div class="top-bar-panel">
-			<div class="top-bar-item">
-				<i class="iconfont">&#xe62c;</i>
+		<draggable class="top-bar-panel" v-model="myArray" :options="option">
+			<div class="top-bar-item" v-for="element in myArray" :key="element">
+				<i class="iconfont" v-html="element"></i>
 			</div>
-			<div class="top-bar-item">
-				<i class="iconfont">&#xe62b;</i>
-			</div>
-			<div class="top-bar-item">
-				<i class="iconfont">&#xe62a;</i>
-			</div>
-		</div>
+		</draggable>
 	</div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
 	name: 'topBar',
-	components: {}
+	components: {
+		draggable
+	},
+	data() {
+		return {
+			myArray: ['&#xe62c;', '&#xe62b;', '&#xe62a;'],
+			option: {
+				group: { name: 'people', pull: 'clone', put: false },
+				sort: false
+			}
+		}
+	},
+	methods: {}
 }
 </script>
 
@@ -25,6 +33,7 @@ export default {
 @import '../style/base.scss';
 .comp-top-bar {
 	border-bottom: 1px solid #7d7d7d;
+	overflow-x: auto;
 	.top-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;

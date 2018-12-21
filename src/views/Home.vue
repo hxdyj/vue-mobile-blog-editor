@@ -1,5 +1,5 @@
 <template>
-	<div class="home">
+	<div>
 		<vue-mobile-blog-editor></vue-mobile-blog-editor>
 	</div>
 </template>
