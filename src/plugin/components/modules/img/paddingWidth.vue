@@ -1,5 +1,5 @@
 <template>
-	<div class="edit-module comp-view-img-full-width">
+	<div class="comp-module-img-full-width">
 		<img class="img" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4093087131,2303503192&fm=27&gp=0.jpg" alt>
 	</div>
 </template>
@@ -11,13 +11,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/base.scss';
+@import '../../../style/base.scss';
 
-.comp-view-img-full-width {
+.comp-module-img-full-width {
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
+	height: auto;
+	padding: 0px 15px;
+	box-sizing: border-box;
 	.img {
+		display: block;
 		width: 100%;
 	}
 }

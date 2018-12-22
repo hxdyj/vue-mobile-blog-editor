@@ -1,0 +1,27 @@
+<template>
+	<div class="edit-module comp-module-img">
+		<!-- <full-width></full-width> -->
+		<padding-width></padding-width>
+	</div>
+</template>
+
+<script>
+import fullWidth from './fullWidth'
+import paddingWidth from './paddingWidth'
+export default {
+	components: { fullWidth, paddingWidth }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../../../style/base.scss';
+
+.comp-module-img {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	.img {
+		width: 100%;
+	}
+}
+</style>
