@@ -13,7 +13,6 @@
 import draggable from 'vuedraggable'
 
 export default {
-	name: 'topBar',
 	components: {
 		draggable
 	},

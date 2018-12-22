@@ -16,7 +16,6 @@
 
 <script>
 export default {
-	name: 'bottomBar',
 	components: {}
 }
 </script>
@@ -27,18 +26,20 @@ export default {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100vw;
-	min-width: 100vw;
-	max-width: 100vw;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
 	border-top: 1px solid #7d7d7d;
 	box-sizing: border-box;
 	overflow-x: auto;
+	height: 34px;
+
 	.bottom-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;
 		.bottom-bar-item {
-			width: 2.6rem;
-			height: 2.6rem;
+			width: 34px;
+			height: 34px;
 			display: flex;
 			align-items: center;
 			justify-content: center;

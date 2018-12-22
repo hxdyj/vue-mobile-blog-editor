@@ -15,7 +15,6 @@
 import draggable from 'vuedraggable'
 
 export default {
-	name: 'topBar',
 	components: {
 		draggable
 	},
@@ -35,14 +34,19 @@ export default {
 <style lang="scss" scoped>
 @import '../style/base.scss';
 .comp-top-bar {
+	height: 34px;
 	border-bottom: 1px solid #7d7d7d;
 	overflow-x: auto;
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
 	.top-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;
 		.top-bar-item {
-			width: 2.6rem;
-			height: 2.6rem;
+			width: 34px;
+			height: 34px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
