@@ -1,5 +1,5 @@
 <template>
-	<div class="edit-module comp-module-text">
+	<div class="edit-module comp-module-text" @click="selectEditModule('text')" :class="{'select':select==-2||select==index}">
 		<default-text></default-text>
 	</div>
 </template>
@@ -7,7 +7,24 @@
 <script>
 import defaultText from './defaultText'
 export default {
-	components: { defaultText }
+	props: {
+		index: {
+			require: true
+		},
+		select: {
+			require: true
+		}
+	},
+	components: { defaultText },
+	methods: {
+		//选中编辑模块
+		selectEditModule(type) {
+			this.$emit('selectEditModule', {
+				editModuleType: type,
+				index: this.index
+			})
+		}
+	}
 }
 </script>
 
