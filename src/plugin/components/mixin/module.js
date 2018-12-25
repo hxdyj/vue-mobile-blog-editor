@@ -1,7 +1,7 @@
 let mixin = {
 	data: function() {
 		return {
-			msg: 'hello'
+			type: ''
 		}
 	},
 	props: {
@@ -20,9 +20,25 @@ let mixin = {
 		selectEditModule(type) {
 			this.$emit('selectEditModule', {
 				editModuleType: type,
-				index: this.index,
-				val: this.val
+				index: this.index
 			})
+		},
+		setCompType(type) {
+			this
+			debugger
+			let result = null
+			if (this.val) {
+				result = Object.assign({}, this.val)
+				result['type'] = type
+			} else {
+				result = {
+					type: type
+				}
+			}
+			this.$emit('update:val', result)
+		},
+		getVal() {
+			return this.val
 		}
 	}
 }

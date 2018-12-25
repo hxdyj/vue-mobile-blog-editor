@@ -9,6 +9,11 @@ import defaultText from './defaultText'
 import mixin from '../../mixin/module.js'
 export default {
 	mixins: [mixin],
+	data() {
+		return {
+			type: 'text'
+		}
+	},
 	components: { defaultText },
 	methods: {}
 }

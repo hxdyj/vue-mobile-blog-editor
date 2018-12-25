@@ -40,21 +40,15 @@ export default {
 	methods: {
 		selectEditModule(data) {
 			this.moduleSelectIndex = data.index
-			debugger
-			this.$emit('selectModule', {
-				type: data.editModuleType,
-				val: data.val,
-				ref: this.$refs['edit_module_' + data.index][0]
-			})
+			this.$emit(
+				'selectModule',
+				this.$refs['edit_module_' + data.index][0]
+			)
 		},
 		//开始拖拽
 		onStart() {
 			this.moduleSelectIndex = -1
-			this.$emit('selectModule', {
-				type: null,
-				val: null,
-				ref: null
-			})
+			this.$emit('selectModule', null)
 		}
 	}
 }

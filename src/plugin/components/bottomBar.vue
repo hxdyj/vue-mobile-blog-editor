@@ -2,11 +2,11 @@
 	<div class="comp-bottom-bar">
 		<div class="bottom-bar-panel">
 			<!-- paddingImg -->
-			<div class="bottom-bar-item active" v-if="type=='img'">
+			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
 				<i class="iconfont">&#xe606;</i>
 			</div>
 			<!-- fullImg -->
-			<div class="bottom-bar-item" v-if="type=='img'">
+			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
 				<i class="iconfont">&#xe6b5;</i>
 			</div>
 		</div>
@@ -23,7 +23,12 @@ export default {
 			default: null
 		}
 	},
-	components: {}
+	components: {},
+	methods: {
+		changeModuleCompType(type) {
+			this.$emit('changeModuleCompType', type)
+		}
+	}
 }
 </script>
 

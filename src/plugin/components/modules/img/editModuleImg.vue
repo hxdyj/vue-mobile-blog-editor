@@ -1,7 +1,8 @@
 <template>
 	<div class="edit-module comp-module-img" @click="selectEditModule('img')" :class="{'select':select==-2||select==index}">
-		<!-- <full-width></full-width> -->
-		<padding-width></padding-width>
+		{{index}}-{{val}}
+		<full-width v-if="val&&val.type=='full_width'"></full-width>
+		<padding-width v-if="!val||val&&val.type=='padding_width'"></padding-width>
 	</div>
 </template>
 
@@ -11,6 +12,11 @@ import paddingWidth from './paddingWidth'
 import mixin from '../../mixin/module.js'
 export default {
 	mixins: [mixin],
+	data() {
+		return {
+			type: 'img'
+		}
+	},
 	components: { fullWidth, paddingWidth }
 }
 </script>

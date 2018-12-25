@@ -2,8 +2,7 @@
 	<div class="vue-mobile-blog-editor">
 		<top-bar></top-bar>
 		<drag-list ref="list" @selectModule="selectModule"></drag-list>
-		<!-- <div @click="getHtml">getHtml</div> -->
-		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal"></bottom-bar>
+		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType"></bottom-bar>
 	</div>
 </template>
 
@@ -27,10 +26,15 @@ export default {
 	},
 	methods: {
 		selectModule(data) {
-			debugger
 			this.moduleSelectType = data.type
 			this.moduleSelectVal = data.val
-			this.moduleSelectRef = data.ref
+			this.moduleSelectRef = data
+		},
+		changeModuleCompType(type) {
+			this.moduleSelectRef.setCompType(type)
+			this.$nextTick().then(() => {
+				this.moduleSelectVal = this.moduleSelectRef.getVal()
+			})
 		}
 	}
 }
