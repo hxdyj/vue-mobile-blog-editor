@@ -1,5 +1,5 @@
 <template>
-	<div class="edit-module comp-module-img">
+	<div class="edit-module comp-module-img" @click="selectEditModule('img')" :class="{'select':select==-2||select==index}">
 		<!-- <full-width></full-width> -->
 		<padding-width></padding-width>
 	</div>
@@ -8,7 +8,9 @@
 <script>
 import fullWidth from './fullWidth'
 import paddingWidth from './paddingWidth'
+import mixin from '../../mixin/module.js'
 export default {
+	mixins: [mixin],
 	components: { fullWidth, paddingWidth }
 }
 </script>

@@ -6,25 +6,11 @@
 
 <script>
 import defaultText from './defaultText'
+import mixin from '../../mixin/module.js'
 export default {
-	props: {
-		index: {
-			require: true
-		},
-		select: {
-			require: true
-		}
-	},
+	mixins: [mixin],
 	components: { defaultText },
-	methods: {
-		//选中编辑模块
-		selectEditModule(type) {
-			this.$emit('selectEditModule', {
-				editModuleType: type,
-				index: this.index
-			})
-		}
-	}
+	methods: {}
 }
 </script>
 

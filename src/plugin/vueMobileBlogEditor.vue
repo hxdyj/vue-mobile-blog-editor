@@ -1,8 +1,9 @@
 <template>
 	<div class="vue-mobile-blog-editor">
 		<top-bar></top-bar>
-		<drag-list></drag-list>
-		<bottom-bar></bottom-bar>
+		<drag-list ref="list" @selectModule="selectModule"></drag-list>
+		<!-- <div @click="getHtml">getHtml</div> -->
+		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal"></bottom-bar>
 	</div>
 </template>
 
@@ -18,9 +19,20 @@ export default {
 		bottomBar
 	},
 	data() {
-		return {}
+		return {
+			moduleSelectVal: null,
+			moduleSelectType: null, // null未选中
+			moduleSelectRef: null // null未选中
+		}
 	},
-	methods: {}
+	methods: {
+		selectModule(data) {
+			debugger
+			this.moduleSelectType = data.type
+			this.moduleSelectVal = data.val
+			this.moduleSelectRef = data.ref
+		}
+	}
 }
 </script>
 

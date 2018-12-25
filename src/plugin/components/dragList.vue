@@ -1,9 +1,17 @@
 <template>
-	<div class="comp-drag-list">
-		<draggable v-model="myArray" :options="{group:'people'}" style="height:80vh;max-height:80vh;overflow-y:auto" @start="onStart">
-			<div v-for="(element,index) in myArray" :key="index">
-				<edit-module-text :ref="'edit_module_'+index" :select="moduleSelectIndex" :index="index" v-if="element=='text'" @selectEditModule="selectEditModule"></edit-module-text>
-				<edit-module-img :ref="'edit_module_'+index" :select="moduleSelectIndex" :index="index" v-if="element=='img'"></edit-module-img>
+	<div class="comp-drag-list" ref="list">
+		{{list}}
+		<draggable v-model="list" :options="{group:'people'}" style="height:80vh;max-height:80vh;overflow-y:auto" @start="onStart">
+			<div v-for="(element,index) in list" :key="index">
+				<edit-module-text
+					:ref="'edit_module_'+index"
+					:val.sync="element.val"
+					:select="moduleSelectIndex"
+					:index="index"
+					v-if="element.type=='text'"
+					@selectEditModule="selectEditModule"
+				></edit-module-text>
+				<edit-module-img :ref="'edit_module_'+index" :val.sync="element.val" :select="moduleSelectIndex" :index="index" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
 			</div>
 		</draggable>
 	</div>
@@ -22,18 +30,31 @@ export default {
 	},
 	data() {
 		return {
-			myArray: [],
-			moduleSelectIndex: -1 // -1没选中  -2全选
+			list: [],
+			//被选中的 module 的 index
+			moduleSelectIndex: -1, // -1没选中  -2全选
+			//被选中的 module 的类型
+			moduleSelectType: null // null未选中
 		}
 	},
 	methods: {
 		selectEditModule(data) {
-			this.$refs['edit_module_' + data.index][0]
 			this.moduleSelectIndex = data.index
+			debugger
+			this.$emit('selectModule', {
+				type: data.editModuleType,
+				val: data.val,
+				ref: this.$refs['edit_module_' + data.index][0]
+			})
 		},
 		//开始拖拽
 		onStart() {
 			this.moduleSelectIndex = -1
+			this.$emit('selectModule', {
+				type: null,
+				val: null,
+				ref: null
+			})
 		}
 	}
 }

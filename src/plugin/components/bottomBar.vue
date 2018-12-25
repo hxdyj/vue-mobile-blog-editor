@@ -1,14 +1,13 @@
 <template>
 	<div class="comp-bottom-bar">
 		<div class="bottom-bar-panel">
-			<div class="bottom-bar-item active">
-				<i class="iconfont">&#xe658;</i>
+			<!-- paddingImg -->
+			<div class="bottom-bar-item active" v-if="type=='img'">
+				<i class="iconfont">&#xe606;</i>
 			</div>
-			<div class="bottom-bar-item">
-				<i class="iconfont">&#xe660;</i>
-			</div>
-			<div class="bottom-bar-item active">
-				<i class="iconfont">&#xe659;</i>
+			<!-- fullImg -->
+			<div class="bottom-bar-item" v-if="type=='img'">
+				<i class="iconfont">&#xe6b5;</i>
 			</div>
 		</div>
 	</div>
@@ -16,6 +15,14 @@
 
 <script>
 export default {
+	props: {
+		type: {
+			require: true
+		},
+		val: {
+			default: null
+		}
+	},
 	components: {}
 }
 </script>

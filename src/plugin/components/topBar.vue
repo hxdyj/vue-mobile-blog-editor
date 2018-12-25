@@ -1,11 +1,11 @@
 <template>
 	<div class="comp-top-bar">
-		<draggable class="top-bar-panel" v-model="myArray" :options="option">
-			<div class="top-bar-item" v-for="element in myArray" :key="element">
-				<i class="iconfont" v-if="element=='text'">&#xe62c;</i>
-				<i class="iconfont" v-if="element=='img'">&#xe62b;</i>
-				<i class="iconfont" v-if="element=='module'">&#xe62a;</i>
-				<i class="iconfont" v-if="element=='del'">&#xe644;</i>
+		<draggable class="top-bar-panel" v-model="topList" :options="option">
+			<div class="top-bar-item" v-for="(top,index) in topList" :key="index">
+				<i class="iconfont" v-if="top.type=='text'">&#xe62c;</i>
+				<i class="iconfont" v-if="top.type=='img'">&#xe62b;</i>
+				<i class="iconfont" v-if="top.type=='module'">&#xe62a;</i>
+				<i class="iconfont" v-if="top.type=='del'">&#xe644;</i>
 			</div>
 		</draggable>
 	</div>
@@ -13,14 +13,24 @@
 
 <script>
 import draggable from 'vuedraggable'
-
+function getObj(type) {
+	return {
+		type: type,
+		val: null
+	}
+}
 export default {
 	components: {
 		draggable
 	},
 	data() {
 		return {
-			myArray: ['text', 'img', 'module', 'del'],
+			topList: [
+				getObj('text'),
+				getObj('img'),
+				getObj('module'),
+				getObj('del')
+			],
 			option: {
 				group: { name: 'people', pull: 'clone', put: false },
 				sort: false
