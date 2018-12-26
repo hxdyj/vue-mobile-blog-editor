@@ -16,7 +16,8 @@ import draggable from 'vuedraggable'
 function getObj(type) {
 	return {
 		type: type,
-		val: null
+		val: null,
+		cuid: ''
 	}
 }
 export default {

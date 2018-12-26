@@ -14,7 +14,8 @@ export default {
 	mixins: [mixin],
 	data() {
 		return {
-			type: 'img'
+			type: 'img',
+			val: null
 		}
 	},
 	components: { fullWidth, paddingWidth }

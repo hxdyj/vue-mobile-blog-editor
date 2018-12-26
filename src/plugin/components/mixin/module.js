@@ -1,8 +1,7 @@
 let mixin = {
 	data: function() {
 		return {
-			type: '',
-			val: ''
+			type: ''
 		}
 	},
 	props: {
@@ -10,6 +9,9 @@ let mixin = {
 			default: null
 		},
 		index: {
+			require: true
+		},
+		cuid: {
 			require: true
 		},
 		select: {
@@ -20,11 +22,9 @@ let mixin = {
 		//选中编辑模块
 		selectEditModule(type) {
 			this.$emit('selectEditModule', {
-				index: this.index
+				index: this.index,
+				cuid: this.cuid
 			})
-		},
-		setVal(val) {
-			this.val = val
 		},
 		setCompType(type) {
 			let result = null
