@@ -1,11 +1,12 @@
 let mixin = {
 	data: function() {
 		return {
-			type: ''
+			type: '',
+			val: ''
 		}
 	},
 	props: {
-		val: {
+		fillVal: {
 			default: null
 		},
 		index: {
@@ -19,13 +20,13 @@ let mixin = {
 		//选中编辑模块
 		selectEditModule(type) {
 			this.$emit('selectEditModule', {
-				editModuleType: type,
 				index: this.index
 			})
 		},
+		setVal(val) {
+			this.val = val
+		},
 		setCompType(type) {
-			this
-			debugger
 			let result = null
 			if (this.val) {
 				result = Object.assign({}, this.val)
@@ -35,10 +36,15 @@ let mixin = {
 					type: type
 				}
 			}
-			this.$emit('update:val', result)
+			this.val = result
 		},
 		getVal() {
 			return this.val
+		}
+	},
+	mounted() {
+		if (this.fillVal) {
+			this.val = Object.assign({}, Object.assign(this.val, this.fillVal))
 		}
 	}
 }

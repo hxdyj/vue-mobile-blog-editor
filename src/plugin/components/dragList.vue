@@ -3,15 +3,8 @@
 		{{list}}
 		<draggable v-model="list" :options="{group:'people'}" style="height:80vh;max-height:80vh;overflow-y:auto" @start="onStart">
 			<div v-for="(element,index) in list" :key="index">
-				<edit-module-text
-					:ref="'edit_module_'+index"
-					:val.sync="element.val"
-					:select="moduleSelectIndex"
-					:index="index"
-					v-if="element.type=='text'"
-					@selectEditModule="selectEditModule"
-				></edit-module-text>
-				<edit-module-img :ref="'edit_module_'+index" :val.sync="element.val" :select="moduleSelectIndex" :index="index" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
+				<edit-module-text :ref="'edit_module_'+index" :select="moduleSelectIndex" :index="index" v-if="element.type=='text'" @selectEditModule="selectEditModule"></edit-module-text>
+				<edit-module-img :ref="'edit_module_'+index" :fill-val="element.val" :select="moduleSelectIndex" :index="index" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
 			</div>
 		</draggable>
 	</div>
@@ -30,7 +23,10 @@ export default {
 	},
 	data() {
 		return {
-			list: [],
+			list: [
+				/* { type: 'img', val: { type: 'full_width' } },
+				{ type: 'img', val: { type: 'padding_width' } } */
+			],
 			//被选中的 module 的 index
 			moduleSelectIndex: -1, // -1没选中  -2全选
 			//被选中的 module 的类型

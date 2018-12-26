@@ -26,9 +26,15 @@ export default {
 	},
 	methods: {
 		selectModule(data) {
-			this.moduleSelectType = data.type
-			this.moduleSelectVal = data.val
-			this.moduleSelectRef = data
+			if (data) {
+				this.moduleSelectType = data.type
+				this.moduleSelectVal = data.val
+				this.moduleSelectRef = data
+			} else {
+				this.moduleSelectType = null
+				this.moduleSelectVal = null
+				this.moduleSelectRef = null
+			}
 		},
 		changeModuleCompType(type) {
 			this.moduleSelectRef.setCompType(type)
