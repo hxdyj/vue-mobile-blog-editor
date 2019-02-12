@@ -2,7 +2,7 @@
 	<div class="comp-bottom-bar">
 		<div class="bottom-bar-panel">
 			<!-- -----------------------   Globel  ---------------------- -->
-			<div class="bottom-bar-item" @click="delModuleComp()">
+			<div class="bottom-bar-item" v-if="select" @click="delModuleComp()">
 				<i class="iconfont">&#xe644;</i>
 			</div>
 			<!-- -----------------------   IMG  ---------------------- -->
@@ -36,6 +36,9 @@ export default {
 		},
 		val: {
 			default: null
+		},
+		select: {
+			require: true
 		}
 	},
 	components: {},

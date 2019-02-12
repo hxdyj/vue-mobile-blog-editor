@@ -2,7 +2,7 @@
 	<div class="vue-mobile-blog-editor" id="vue-mobile-blog-editor">
 		<top-bar></top-bar>
 		<drag-list ref="drag_list" @selectModule="selectModule"></drag-list>
-		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType" @delModuleComp="delModuleComp"></bottom-bar>
+		<bottom-bar :select="moduleSelectRef" :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType" @delModuleComp="delModuleComp"></bottom-bar>
 	</div>
 </template>
 
@@ -54,6 +54,9 @@ export default {
 			//删除list里的module
 			this.$refs.drag_list.removeItem(this.moduleSelectRef.cuid)
 			//将选中状态置为null
+			this.moduleSelectType = null
+			this.moduleSelectVal = null
+			this.moduleSelectRef = null
 		}
 	},
 	mounted() {

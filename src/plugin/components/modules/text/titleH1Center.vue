@@ -32,7 +32,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 40px;
+	font-size: 34px;
 	padding: 10px 15px;
 	font-weight: 500;
 	box-sizing: border-box;
