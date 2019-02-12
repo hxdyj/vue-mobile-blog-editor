@@ -1,6 +1,11 @@
 <template>
 	<div class="comp-bottom-bar">
 		<div class="bottom-bar-panel">
+			<!-- -----------------------   Globel  ---------------------- -->
+			<div class="bottom-bar-item" @click="delModuleComp()">
+				<i class="iconfont">&#xe644;</i>
+			</div>
+			<!-- -----------------------   IMG  ---------------------- -->
 			<!-- paddingImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
 				<i class="iconfont">&#xe606;</i>
@@ -8,6 +13,16 @@
 			<!-- fullImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
 				<i class="iconfont">&#xe6b5;</i>
+			</div>
+
+			<!-- -----------------------   TEXT  ---------------------- -->
+			<!-- defaultText -->
+			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('default_text')">
+				<i class="iconfont">&#xe615;</i>
+			</div>
+			<!-- titleH1Center -->
+			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('title_h1_center')">
+				<i class="iconfont">&#xe62d;</i>
 			</div>
 		</div>
 	</div>
@@ -27,6 +42,9 @@ export default {
 	methods: {
 		changeModuleCompType(type) {
 			this.$emit('changeModuleCompType', type)
+		},
+		delModuleComp() {
+			this.$emit('delModuleComp')
 		}
 	}
 }
@@ -44,14 +62,14 @@ export default {
 	border-top: 1px solid #7d7d7d;
 	box-sizing: border-box;
 	overflow-x: auto;
-	height: 34px;
+	height: $barH;
 
 	.bottom-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;
 		.bottom-bar-item {
-			width: 34px;
-			height: 34px;
+			width: $barH;
+			height: $barH;
 			display: flex;
 			align-items: center;
 			justify-content: center;

@@ -9,6 +9,9 @@ let mixin = {
 	props: {
 		fillVal: {
 			default: null
+		},
+		cuid: {
+			default: ''
 		}
 	},
 	methods: {

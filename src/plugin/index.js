@@ -26,10 +26,16 @@ plugin.install = function(Vue, options) {
 	Vue.prototype.$myMethod = function(methodOptions) {
 		// 逻辑...
 	} */
-
-	Vue.vueMobileBlogEditorConfig = options || {
-		defaultImgSrc: 'https://scdn.yourbay.net/default/default_img.png'
+	if (!options) {
+		options = {}
+	} else {
+		if (!options.defaultImgSrc) {
+			options['defaultImgSrc'] =
+				'https://scdn.yourbay.net/default/default_img.png'
+		}
 	}
+
+	Vue.vueMobileBlogEditorConfig = options
 	Vue.directive(generateId.name, generateId.options)
 	Vue.component(vueMobileBlogEditor.name, vueMobileBlogEditor) // testPanel.name 组件的name属性
 }

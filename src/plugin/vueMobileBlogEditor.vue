@@ -1,8 +1,8 @@
 <template>
-	<div class="vue-mobile-blog-editor">
+	<div class="vue-mobile-blog-editor" id="vue-mobile-blog-editor">
 		<top-bar></top-bar>
-		<drag-list @selectModule="selectModule"></drag-list>
-		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType"></bottom-bar>
+		<drag-list ref="drag_list" @selectModule="selectModule"></drag-list>
+		<bottom-bar :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType" @delModuleComp="delModuleComp"></bottom-bar>
 	</div>
 </template>
 
@@ -49,7 +49,22 @@ export default {
 			this.$nextTick().then(() => {
 				this.moduleSelectVal = this.moduleSelectRef.getVal()
 			})
+		},
+		delModuleComp() {
+			//删除list里的module
+			this.$refs.drag_list.removeItem(this.moduleSelectRef.cuid)
+			//将选中状态置为null
 		}
+	},
+	mounted() {
+		let ele = document.getElementById('vue-mobile-blog-editor')
+		let stopFunc = function(e) {
+			// e.preventDefault()
+			e.stopPropagation()
+		}
+		ele.onscroll = stopFunc
+		ele.ontouchstart = stopFunc
+		// ele.ontouchmove = stopFunc
 	}
 }
 </script>

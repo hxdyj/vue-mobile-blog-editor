@@ -4,8 +4,9 @@
 			<div class="top-bar-item" v-for="(top,index) in topList" :key="index">
 				<i class="iconfont" v-if="top.type=='text'">&#xe62c;</i>
 				<i class="iconfont" v-if="top.type=='img'">&#xe62b;</i>
-				<i class="iconfont" v-if="top.type=='module'">&#xe62a;</i>
-				<i class="iconfont" v-if="top.type=='del'">&#xe644;</i>
+				<i class="iconfont" v-if="top.type=='split'">&#xe66e;</i>
+				<!-- <i class="iconfont" v-if="top.type=='module'">&#xe62a;</i>
+				<i class="iconfont" v-if="top.type=='del'">&#xe644;</i>-->
 			</div>
 		</draggable>
 	</div>
@@ -29,8 +30,9 @@ export default {
 			topList: [
 				getObj('text'),
 				getObj('img'),
-				getObj('module'),
-				getObj('del')
+				getObj('split')
+				/* getObj('module'),
+				getObj('del') */
 			],
 			option: {
 				group: { name: 'people', pull: 'clone', put: false },
@@ -45,7 +47,7 @@ export default {
 <style lang="scss" scoped>
 @import '../style/base.scss';
 .comp-top-bar {
-	height: 34px;
+	height: $barH;
 	border-bottom: 1px solid #7d7d7d;
 	overflow-x: auto;
 	box-sizing: border-box;
@@ -56,8 +58,8 @@ export default {
 		display: flex;
 		flex-wrap: nowrap;
 		.top-bar-item {
-			width: 34px;
-			height: 34px;
+			width: $barH;
+			height: $barH;
 			display: flex;
 			align-items: center;
 			justify-content: center;

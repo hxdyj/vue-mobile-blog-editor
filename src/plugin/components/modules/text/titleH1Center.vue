@@ -1,6 +1,6 @@
 <template>
-	<div class="edit-module comp-module-default-text">
-		<div-textarea ref="textarea" @eInput="eInput"></div-textarea>
+	<div class="edit-module comp-module-title-h1-center">
+		<div-textarea ref="textarea" align="center"></div-textarea>
 	</div>
 </template>
 
@@ -25,15 +25,16 @@ export default {
 <style lang="scss" scoped>
 @import '../../../style/base.scss';
 
-.comp-module-default-text {
+.comp-module-title-h1-center {
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 30px;
+	font-size: 40px;
 	padding: 10px 15px;
+	font-weight: 500;
 	box-sizing: border-box;
 }
 </style>
