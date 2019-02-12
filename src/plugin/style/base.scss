@@ -10,7 +10,23 @@
 
 .edit-module {
 	box-sizing: border-box;
+	position: relative;
 	&.select {
 		border: 1px dashed red;
+	}
+}
+
+.edit-module-options {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	display: flex;
+	right: 0;
+	top: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	flex-direction: column;
+	.iconfont {
+		font-size: 50px;
 	}
 }

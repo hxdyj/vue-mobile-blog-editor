@@ -1,8 +1,11 @@
 <template>
-	<div class="edit-module comp-module-img" @click="selectEditModule('img')" :class="{'select':select==-2||select==index}">
-		{{index}}-{{val}}
-		<full-width v-if="val&&val.type=='full_width'"></full-width>
-		<padding-width v-if="!val||val&&val.type=='padding_width'"></padding-width>
+	<div class="edit-module comp-module-img" @click="selectEditModule('img')" :class="{'select':select}">
+		<full-width v-if="val.type=='full_width'" :src="getSrc"></full-width>
+		<padding-width v-if="!val.type||val&&val.type=='padding_width'" :src="getSrc"></padding-width>
+		<div class="edit-module-options" v-show="select">
+			<i class="iconfont" @click.stop="upload">&#xe6a1;</i>
+			<i class="iconfont edit-module-drag-key">&#xe616;</i>
+		</div>
 	</div>
 </template>
 
@@ -14,11 +17,30 @@ export default {
 	mixins: [mixin],
 	data() {
 		return {
-			type: 'img',
-			val: null
+			type: 'img'
 		}
 	},
-	components: { fullWidth, paddingWidth }
+	computed: {
+		getSrc() {
+			return this.val.src
+				? this.val.src
+				: Vue.vueMobileBlogEditorConfig.defaultImgSrc
+		}
+	},
+	components: { fullWidth, paddingWidth },
+	methods: {
+		setSrc(src) {
+			this.$set(this.val, 'src', src)
+		},
+		upload() {
+			let uploadFunc = Vue.vueMobileBlogEditorConfig.uploadImg
+			if (uploadFunc) {
+				uploadFunc(this.val.src ? this.val.src : null, this.setSrc)
+			} else {
+				console.error('please set plugin option uploadImg')
+			}
+		}
+	}
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="edit-module comp-module-text" @click="selectEditModule('text')" :class="{'select':select==-2||select==index}">
+	<div class="edit-module comp-module-text" @click="selectEditModule('text')" :class="{'select':select}">
 		<default-text></default-text>
 	</div>
 </template>

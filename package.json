@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cuid": "^2.1.4",
+    "vant": "^1.5.7",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuedraggable": "^2.17.0",

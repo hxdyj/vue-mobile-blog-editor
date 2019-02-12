@@ -13,11 +13,11 @@
 
 <script>
 import draggable from 'vuedraggable'
+import cuid from 'cuid'
 function getObj(type) {
 	return {
 		type: type,
-		val: null,
-		cuid: ''
+		val: null
 	}
 }
 export default {

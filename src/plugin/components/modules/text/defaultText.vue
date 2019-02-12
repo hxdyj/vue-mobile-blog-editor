@@ -1,5 +1,5 @@
 <template>
-	<div class="edit-module comp-module-default-text">TEXT</div>
+	<div v-generate-id class="edit-module comp-module-default-text">TEXT</div>
 </template>
 
 <script>
