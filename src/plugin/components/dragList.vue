@@ -1,7 +1,7 @@
 <template>
 	<div class="comp-drag-list" ref="list">
 		<!-- {{list}} -->
-		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" style @start="onStart" @add="onAdd">
+		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd">
 			<div v-for="element in list" :key="element.cuid">
 				<edit-module-text :cuid="element.cuid" v-if="element.type=='text'" @selectEditModule="selectEditModule"></edit-module-text>
 				<edit-module-img :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
@@ -57,18 +57,24 @@ export default {
 				return value['cuid'] != cuid
 			})
 		}
-	}
+	},
+	mounted() {}
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../style/base.scss';
 .comp-drag-list {
+	overflow: hidden;
+	flex-direction: column;
+	display: flex;
 }
 .drag-comp {
-	height: calc(100vh - 88px);
-	max-height: calc(100vh - 88px);
+	flex-grow: 1;
+	min-height: 100%;
+	max-height: 100%;
 	overflow-y: auto;
+	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 }
 </style>

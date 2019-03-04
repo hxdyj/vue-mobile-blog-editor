@@ -47,7 +47,7 @@ export default {
 <style lang="scss" scoped>
 @import '../style/base.scss';
 .comp-top-bar {
-	height: $barH;
+	min-height: $barH;
 	border-bottom: 1px solid #7d7d7d;
 	overflow-x: auto;
 	box-sizing: border-box;

@@ -1,8 +1,17 @@
 <template>
-	<div class="vue-mobile-blog-editor" id="vue-mobile-blog-editor">
-		<top-bar></top-bar>
-		<drag-list ref="drag_list" @selectModule="selectModule"></drag-list>
-		<bottom-bar :select="moduleSelectRef" :type="moduleSelectType" :val="moduleSelectVal" @changeModuleCompType="changeModuleCompType" @delModuleComp="delModuleComp"></bottom-bar>
+	<div style="display:flex;width:100%;height:100%;flex-direction:column;">
+		<div id="vue-mobile-blog-editor">
+			<top-bar class="vue-mobile-blog-editor-page-top"></top-bar>
+			<drag-list class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
+			<bottom-bar
+				class="vue-mobile-blog-editor-page-bottom"
+				:select="moduleSelectRef"
+				:type="moduleSelectType"
+				:val="moduleSelectVal"
+				@changeModuleCompType="changeModuleCompType"
+				@delModuleComp="delModuleComp"
+			></bottom-bar>
+		</div>
 	</div>
 </template>
 
@@ -74,18 +83,27 @@ export default {
 
 <style lang="scss" scoped>
 @import './style/base.scss';
-* {
-	margin: 0;
-	padding: 0;
-}
 
-.vue-mobile-blog-editor {
+#vue-mobile-blog-editor {
+	flex-grow: 1;
 	position: relative;
 	min-height: 100%;
 	max-height: 100%;
+	overflow: hidden;
 	height: 100%;
 	min-width: 100%;
 	max-width: 100%;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	.vue-mobile-blog-editor-page-top {
+		flex-grow: 0;
+	}
+	.vue-mobile-blog-editor-page-list {
+		flex-grow: 1;
+	}
+	.vue-mobile-blog-editor-page-bottom {
+		flex-grow: 0;
+	}
 }
 </style>

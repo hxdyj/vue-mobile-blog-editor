@@ -11,6 +11,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+/* .home-page {
+	height: 80vh;
+	width: 400px;
+} */
 .home-page {
 	height: 100vh;
 }

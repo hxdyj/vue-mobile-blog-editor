@@ -56,23 +56,20 @@ export default {
 <style lang="scss" scoped>
 @import '../style/base.scss';
 .comp-bottom-bar {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
 	border-top: 1px solid #7d7d7d;
 	box-sizing: border-box;
 	overflow-x: auto;
-	height: $barH;
+	min-height: $barH;
 
 	.bottom-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;
 		.bottom-bar-item {
 			width: $barH;
-			height: $barH;
+			min-height: $barH;
 			display: flex;
 			align-items: center;
 			justify-content: center;
