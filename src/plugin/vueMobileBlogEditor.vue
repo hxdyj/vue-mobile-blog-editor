@@ -34,23 +34,36 @@ export default {
 		}
 	},
 	methods: {
+		setVal(data) {
+			this.moduleSelectType = data.type
+			this.moduleSelectVal = data.val
+			this.moduleSelectRef = data
+		},
+		clear() {
+			this.moduleSelectType = null
+			this.moduleSelectVal = null
+			this.moduleSelectRef = null
+		},
 		selectModule(data) {
+			//传来需要选中的值存在
 			if (data) {
+				//存在已经选中的值
 				if (this.moduleSelectRef) {
+					//如果要设置的值和选中的值不一样，取消原来值得选中状态，设置新值
 					if (this.moduleSelectRef != data) {
 						this.moduleSelectRef.setSelect(false)
+						this.setVal(data)
+					} else {
+						//如果选中的值和原来的一样，那就清空选中
+						this.clear()
 					}
+				} else {
+					//不存在已经选中的值，直接设置值
+					this.setVal(data)
 				}
-				this.moduleSelectType = data.type
-				this.moduleSelectVal = data.val
-				this.moduleSelectRef = data
 			} else {
-				if (this.moduleSelectRef) {
-					this.moduleSelectRef.setSelect(false)
-				}
-				this.moduleSelectType = null
-				this.moduleSelectVal = null
-				this.moduleSelectRef = null
+				//传来需要选中的值不存在
+				this.clear()
 			}
 		},
 		changeModuleCompType(type) {
@@ -63,9 +76,7 @@ export default {
 			//删除list里的module
 			this.$refs.drag_list.removeItem(this.moduleSelectRef.cuid)
 			//将选中状态置为null
-			this.moduleSelectType = null
-			this.moduleSelectVal = null
-			this.moduleSelectRef = null
+			this.clear()
 		}
 	},
 	mounted() {
