@@ -1,6 +1,14 @@
 <template>
 	<div class="textarea">
-		<div ref="input" contenteditable="true" class="input" :class="{'left':align==='left','center':align==='center','right':align==='right',}" @input="inputEvent"></div>
+		<div
+			ref="input"
+			@click="clickInput"
+			@blur="onBlur"
+			contenteditable="true"
+			class="input"
+			:class="{'left':align==='left','center':align==='center','right':align==='right',}"
+			@input="inputEvent"
+		></div>
 		<div class="placeholder" v-if="!input">{{placeholder}}</div>
 	</div>
 </template>
@@ -34,6 +42,17 @@ export default {
 		setVal(text) {
 			this.$refs.input.innerText = text
 			this.input = text
+		},
+		clickInput(target) {
+			target.target.scrollIntoView()
+		},
+		onBlur() {
+			let ele = document.getElementById('app')
+			//TODO 判断只有在手机浏览器才这样
+			setTimeout(() => {
+				ele.scrollTop = 0
+				document.body.scrollTop = 0
+			}, 300)
 		}
 	},
 	mounted() {}
@@ -45,11 +64,13 @@ export default {
 	position: relative;
 	box-sizing: border-box;
 	.input {
+		-webkit-user-modify: read-write-plaintext-only;
 		position: relative;
 		z-index: 2;
 		outline: none;
 		box-sizing: border-box;
 		word-break: break-all;
+		background: transparent;
 		&.left {
 			text-align: left;
 		}

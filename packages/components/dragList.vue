@@ -3,10 +3,11 @@
 		<!-- {{list}} -->
 		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd">
 			<div v-for="element in list" :key="element.cuid">
-				<edit-module-text :cuid="element.cuid" v-if="element.type=='text'" @selectEditModule="selectEditModule"></edit-module-text>
+				<edit-module-text :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='text'" @selectEditModule="selectEditModule"></edit-module-text>
 				<edit-module-img :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
 				<edit-module-split :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='split'" @selectEditModule="selectEditModule"></edit-module-split>
 			</div>
+			<div style="height:40vh"></div>
 		</draggable>
 	</div>
 </template>
@@ -28,6 +29,15 @@ export default {
 	data() {
 		return {
 			list: [
+				/* {
+					type: 'text',
+					val: {
+						color: '#364A5F',
+						text: '扥萨芬撒sdfdsafdsa',
+						backgroundColor: '#41B983'
+					},
+					cuid: cuid()
+				} */
 				/* { type: 'img', val: { type: 'full_width' }, cuid: cuid() },
 				{ type: 'img', val: { type: 'padding_width' }, cuid: cuid() } */
 			],

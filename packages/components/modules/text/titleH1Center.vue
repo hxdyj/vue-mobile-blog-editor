@@ -11,14 +11,17 @@ export default {
 	components: {
 		divTextarea
 	},
+	watch: {
+		text: function(val) {
+			this.$refs.textarea.setVal(val)
+		}
+	},
 	methods: {
 		eInput(text) {
 			this.$emit('eInput', text)
 		}
 	},
-	mounted() {
-		this.$refs.textarea.setVal(this.text)
-	}
+	mounted() {}
 }
 </script>
 

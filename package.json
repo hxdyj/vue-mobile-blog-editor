@@ -1,38 +1,43 @@
 {
-  "name": "vue-mobile-blog-editor",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "vue-cli-service serve",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "cuid": "^2.1.4",
-    "vant": "^1.5.7",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1",
-    "vuedraggable": "^2.17.0",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
-    "node-sass": "^4.9.0",
-    "postcss-pxtorem": "^4.0.1",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+	"name": "vue-mobile-blog-editor",
+	"version": "0.0.1",
+	"private": false,
+	"license": "MIT",
+	"description": "mobile simple blog editor",
+	"author": "hxdyj",
+	"main": "lib/vue-mobile-blog-editor.umd.min.js",
+	"scripts": {
+		"start": "vue-cli-service serve",
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint",
+		"lib": "vue-cli-service build --target lib --name vue-mobile-blog-editor --dest lib packages/index.js"
+	},
+	"dependencies": {
+		"cuid": "^2.1.4",
+		"vue": "^2.5.17",
+		"vuedraggable": "^2.17.0"
+	},
+	"devDependencies": {
+		"vuex": "^3.0.1",
+		"vue-router": "^3.0.1",
+		"vant": "^1.5.7",
+		"@babel/plugin-proposal-optional-chaining": "^7.0.0",
+		"@vue/cli-plugin-babel": "^3.2.0",
+		"@vue/cli-service": "^3.2.0",
+		"node-sass": "^4.9.0",
+		"postcss-pxtorem": "^4.0.1",
+		"sass-loader": "^7.0.1",
+		"vue-template-compiler": "^2.5.17"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	]
 }

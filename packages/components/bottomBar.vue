@@ -17,11 +17,11 @@
 
 			<!-- -----------------------   TEXT  ---------------------- -->
 			<!-- defaultText -->
-			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('default_text')">
+			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='default_text'}" @click="changeModuleCompType('default_text')">
 				<i class="iconfont">&#xe615;</i>
 			</div>
 			<!-- titleH1Center -->
-			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('title_h1_center')">
+			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='title_h1_center'}" @click="changeModuleCompType('title_h1_center')">
 				<i class="iconfont">&#xe62d;</i>
 			</div>
 		</div>

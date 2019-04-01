@@ -14,6 +14,7 @@ export default {
 /* .home-page {
 	height: 80vh;
 	width: 400px;
+	border: 1px solid #ccc;
 } */
 .home-page {
 	height: 100vh;

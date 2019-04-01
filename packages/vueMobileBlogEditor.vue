@@ -55,14 +55,21 @@ export default {
 						this.setVal(data)
 					} else {
 						//如果选中的值和原来的一样，那就清空选中
-						this.clear()
+						if (this.moduleSelectType != 'text') {
+							this.clear()
+						} else {
+							this.moduleSelectRef.setSelect(true)
+						}
 					}
 				} else {
 					//不存在已经选中的值，直接设置值
 					this.setVal(data)
 				}
 			} else {
-				//传来需要选中的值不存在
+				//如果存在选中的，先把选中的取消掉
+				if (this.moduleSelectRef) {
+					this.moduleSelectRef.setSelect(false)
+				}
 				this.clear()
 			}
 		},
