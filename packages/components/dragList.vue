@@ -53,39 +53,15 @@ export default {
 	},
 	data() {
 		return {
-			list: [
-				{
-					type: 'text',
-					cuid: 'cjtzb8sd600003g5lra7fr06y',
-					val: {
-						text: 'fdsfdsafdsafsaf',
-						type: 'title_h1_center',
-						backgroundColor: '#41B983',
-						color: 'white'
-					}
-				},
-				{ type: 'img', val: null },
-				{ type: 'img', val: null },
-				{ type: 'img', val: null },
-				{ type: 'img', val: null }
-				/* {
-					type: 'text',
-					val: {
-						color: '#364A5F',
-						text: '扥萨芬撒sdfdsafdsa',
-						backgroundColor: '#41B983'
-					},
-					cuid: cuid()
-				} */
-				/* { type: 'img', val: { type: 'full_width' }, cuid: cuid() },
-				{ type: 'img', val: { type: 'padding_width' }, cuid: cuid() } */
-			],
-			//被选中的 module 的 index
+			list: [],
 			//被选中的 module 的类型
 			moduleSelectType: null // null未选中
 		}
 	},
 	methods: {
+		setList(list) {
+			this.list = list
+		},
 		changeVal(data) {
 			let obj = this.list[data.step]
 			obj._val = data.val

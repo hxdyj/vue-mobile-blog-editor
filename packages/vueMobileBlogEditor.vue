@@ -49,6 +49,9 @@ export default {
 			this.moduleSelectVal = data.val
 			this.moduleSelectRef = data
 		},
+		setData(list) {
+			return this.$refs.drag_list.setList(list)
+		},
 		getData() {
 			return this.$refs.drag_list.getResultList()
 		},
