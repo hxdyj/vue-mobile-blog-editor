@@ -2,11 +2,11 @@
 	<div class="comp-top-bar">
 		<draggable class="top-bar-panel" v-model="topList" :options="option">
 			<div class="top-bar-item" v-for="(top,index) in topList" :key="index">
-				<i class="iconfont" v-if="top.type=='text'">&#xe62c;</i>
-				<i class="iconfont" v-if="top.type=='img'">&#xe62b;</i>
-				<i class="iconfont" v-if="top.type=='split'">&#xe66e;</i>
-				<!-- <i class="iconfont" v-if="top.type=='module'">&#xe62a;</i>
-				<i class="iconfont" v-if="top.type=='del'">&#xe644;</i>-->
+				<i class="iconfont-comp" v-if="top.type=='text'">&#xe62c;</i>
+				<i class="iconfont-comp" v-if="top.type=='img'">&#xe62b;</i>
+				<i class="iconfont-comp" v-if="top.type=='split'">&#xe66e;</i>
+				<!-- <i class="iconfont-comp" v-if="top.type=='module'">&#xe62a;</i>
+				<i class="iconfont-comp" v-if="top.type=='del'">&#xe644;</i>-->
 			</div>
 		</draggable>
 	</div>

@@ -5,11 +5,11 @@
 		<default-text :mode="mode" :text="getText" @eInput="setText" v-if="!val.type||val.type=='default_text'"></default-text>
 		<title-h1-center :mode="mode" :text="getText" @eInput="setText" v-if="val.type=='title_h1_center'"></title-h1-center>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont" @click.stop="selectColor">&#xe6a1;</i>
-			<i class="iconfont edit-module-drag-key">&#xe616;</i>
+			<i class="iconfont-comp" @click.stop="selectColor">&#xe6a1;</i>
+			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
 		</div>
 		<div class="color-picker" v-if="modalColor">
-			<i class="iconfont close-color-picker-icon" @click="modalColor=false">&#xe6a6;</i>
+			<i class="iconfont-comp close-color-picker-icon" @click="modalColor=false">&#xe6a6;</i>
 			<div class="color-section">
 				<div class="info">
 					<div class="color-title">文字</div>

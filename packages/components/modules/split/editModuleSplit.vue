@@ -2,7 +2,7 @@
 	<div class="edit-module comp-module-split" @click="selectEditModule('split')" :class="{'select':select}">
 		<color-line v-if="!val.type||val&&val.type=='color_line'"></color-line>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont edit-module-drag-key">&#xe616;</i>
+			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
 		</div>
 	</div>
 </template>

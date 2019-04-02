@@ -5,8 +5,8 @@
 		<full-width v-if="val.type=='full_width'" :src="getSrc"></full-width>
 		<padding-width v-if="!val.type||val&&val.type=='padding_width'" :src="getSrc"></padding-width>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont" @click.stop="upload">&#xe6a1;</i>
-			<i class="iconfont edit-module-drag-key">&#xe616;</i>
+			<i class="iconfont-comp" @click.stop="upload">&#xe6a1;</i>
+			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
 		</div>
 	</div>
 </template>

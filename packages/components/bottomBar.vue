@@ -3,26 +3,26 @@
 		<div class="bottom-bar-panel">
 			<!-- -----------------------   Globel  ---------------------- -->
 			<div class="bottom-bar-item" v-if="select" @click="delModuleComp()">
-				<i class="iconfont">&#xe644;</i>
+				<i class="iconfont-comp">&#xe644;</i>
 			</div>
 			<!-- -----------------------   IMG  ---------------------- -->
 			<!-- paddingImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
-				<i class="iconfont">&#xe606;</i>
+				<i class="iconfont-comp">&#xe606;</i>
 			</div>
 			<!-- fullImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
-				<i class="iconfont">&#xe6b5;</i>
+				<i class="iconfont-comp">&#xe6b5;</i>
 			</div>
 
 			<!-- -----------------------   TEXT  ---------------------- -->
 			<!-- defaultText -->
 			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':!val.type||val.type=='default_text'}" @click="changeModuleCompType('default_text')">
-				<i class="iconfont">&#xe615;</i>
+				<i class="iconfont-comp">&#xe615;</i>
 			</div>
 			<!-- titleH1Center -->
 			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='title_h1_center'}" @click="changeModuleCompType('title_h1_center')">
-				<i class="iconfont">&#xe62d;</i>
+				<i class="iconfont-comp">&#xe62d;</i>
 			</div>
 		</div>
 	</div>
