@@ -21,7 +21,8 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 34px;
+	font-size: 20px;
+	line-height: 26px;
 	padding: 10px 15px;
 	font-weight: 500;
 	box-sizing: border-box;

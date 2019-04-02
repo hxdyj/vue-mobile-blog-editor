@@ -5,11 +5,7 @@ let mixin = {
 	components: {
 		divTextarea
 	},
-	watch: {
-		text: function(val) {
-			this.$refs.textarea.setVal(val)
-		}
-	},
+	watch: {},
 	methods: {
 		eInput(text) {
 			this.$emit('eInput', text)

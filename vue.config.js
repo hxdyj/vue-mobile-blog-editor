@@ -21,10 +21,10 @@ module.exports = {
 			sass: {},
 			postcss: {
 				plugins: [
-					require('postcss-pxtorem')({
-						rootValue: 28 // 换算的基数
-						/*  selectorBlackList  : ['weui','mu'], // 忽略转换正则匹配项
-                        propList   : ['*'], */
+					require('postcss-px2rem')({
+						remUnit: 14 // 换算的基数
+						//  selectorBlackList  : ['weui','mu'], // 忽略转换正则匹配项
+						// propList   : ['*'],
 					})
 				]
 			}

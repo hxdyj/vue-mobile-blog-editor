@@ -21,7 +21,6 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 30px;
 	padding: 10px 15px;
 	box-sizing: border-box;
 }

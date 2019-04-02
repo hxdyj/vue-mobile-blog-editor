@@ -1,6 +1,6 @@
 <template>
 	<div class="edit-module comp-module-text" :style="{backgroundColor:getBgColor,color:getColor}" @click="selectEditModule('text')" :class="{'select':select}">
-		<!-- {{val}} -->
+		{{val}}
 		<!-- {{step}} -->
 		<default-text :mode="mode" :text="getText" @eInput="setText" v-if="!val.type||val.type=='default_text'"></default-text>
 		<title-h1-center :mode="mode" :text="getText" @eInput="setText" v-if="val.type=='title_h1_center'"></title-h1-center>
@@ -109,6 +109,8 @@ export default {
 	min-width: 100%;
 	max-width: 100%;
 	position: relative;
+	font-size: 16px;
+	line-height: 22px;
 }
 
 .color-picker {

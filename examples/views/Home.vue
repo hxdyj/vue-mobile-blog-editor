@@ -32,13 +32,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.home-page {
+/* .home-page {
 	height: 80vh;
 	width: 400px;
 	border: 1px solid #ccc;
-}
-/* .home-page {
-	height: 100vh;
 } */
+.home-page {
+	height: 100vh;
+}
 </style>
 
