@@ -5,9 +5,9 @@
 </template>
 
 <script>
+import mixin from '../../mixin/img.js'
 export default {
-	props: ['src'],
-	components: {}
+	mixins: [mixin]
 }
 </script>
 

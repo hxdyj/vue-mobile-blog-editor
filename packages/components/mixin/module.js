@@ -6,17 +6,32 @@ let mixin = {
 			select: false
 		}
 	},
+	watch: {
+		val: function(value) {
+			this.$emit('changeVal', {
+				val: value,
+				step: this.step
+			})
+		}
+	},
 	props: {
 		fillVal: {
 			default: null
 		},
 		cuid: {
 			default: ''
+		},
+		step: {
+			default: ''
+		},
+		mode: {
+			default: ''
 		}
 	},
 	methods: {
 		//选中编辑模块
 		selectEditModule() {
+			if (this.mode != 'edit') return
 			this.select = !this.select
 			this.$emit('selectEditModule', {
 				ref: this

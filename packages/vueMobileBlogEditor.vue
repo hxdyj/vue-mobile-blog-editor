@@ -1,9 +1,10 @@
 <template>
 	<div style="display:flex;width:100%;height:100%;flex-direction:column;">
 		<div id="vue-mobile-blog-editor">
-			<top-bar class="vue-mobile-blog-editor-page-top"></top-bar>
-			<drag-list class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
+			<top-bar v-if="mode=='edit'" class="vue-mobile-blog-editor-page-top"></top-bar>
+			<drag-list :upload-img="uploadImg" :mode="mode" class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
 			<bottom-bar
+				v-if="mode=='edit'"
 				class="vue-mobile-blog-editor-page-bottom"
 				:select="moduleSelectRef"
 				:type="moduleSelectType"
@@ -19,8 +20,17 @@
 import topBar from './components/topBar'
 import dragList from './components/dragList'
 import bottomBar from './components/bottomBar'
+require('./style/ali_icon/iconfont.css')
 export default {
 	name: 'vueMobileBlogEditor',
+	props: {
+		mode: {
+			default: 'edit' //edit show
+		},
+		uploadImg: {
+			default: null
+		}
+	},
 	components: {
 		topBar,
 		dragList,
@@ -38,6 +48,9 @@ export default {
 			this.moduleSelectType = data.type
 			this.moduleSelectVal = data.val
 			this.moduleSelectRef = data
+		},
+		getData() {
+			return this.$refs.drag_list.getResultList()
 		},
 		clear() {
 			this.moduleSelectType = null

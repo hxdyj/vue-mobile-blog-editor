@@ -1,27 +1,13 @@
 <template>
 	<div class="edit-module comp-module-title-h1-center">
-		<div-textarea ref="textarea" align="center"></div-textarea>
+		<div-textarea :mode="mode" ref="textarea" align="center" @eInput="eInput"></div-textarea>
 	</div>
 </template>
 
 <script>
-import divTextarea from './divTextarea'
+import mixin from '../../mixin/text.js'
 export default {
-	props: ['text'],
-	components: {
-		divTextarea
-	},
-	watch: {
-		text: function(val) {
-			this.$refs.textarea.setVal(val)
-		}
-	},
-	methods: {
-		eInput(text) {
-			this.$emit('eInput', text)
-		}
-	},
-	mounted() {}
+	mixins: [mixin]
 }
 </script>
 

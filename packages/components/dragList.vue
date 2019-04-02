@@ -2,12 +2,36 @@
 	<div class="comp-drag-list" ref="list">
 		<!-- {{list}} -->
 		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd">
-			<div v-for="element in list" :key="element.cuid">
-				<edit-module-text :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='text'" @selectEditModule="selectEditModule"></edit-module-text>
-				<edit-module-img :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='img'" @selectEditModule="selectEditModule"></edit-module-img>
-				<edit-module-split :cuid="element.cuid" :fill-val="element.val" v-if="element.type=='split'" @selectEditModule="selectEditModule"></edit-module-split>
+			<div :class="{'drag-item':mode=='edit'}" v-for="(element,index) in list" :key="element.cuid">
+				<edit-module-text
+					:mode="mode"
+					:step="index"
+					:cuid="element.cuid"
+					:fill-val="element.val"
+					v-if="element.type=='text'"
+					@selectEditModule="selectEditModule"
+					@changeVal="changeVal"
+				></edit-module-text>
+				<edit-module-img
+					:upload-img="uploadImg"
+					:mode="mode"
+					:step="index"
+					:cuid="element.cuid"
+					:fill-val="element.val"
+					v-if="element.type=='img'"
+					@selectEditModule="selectEditModule"
+					@changeVal="changeVal"
+				></edit-module-img>
+				<edit-module-split
+					:mode="mode"
+					:step="index"
+					:cuid="element.cuid"
+					:fill-val="element.val"
+					v-if="element.type=='split'"
+					@selectEditModule="selectEditModule"
+					@changeVal="changeVal"
+				></edit-module-split>
 			</div>
-			<div style="height:40vh"></div>
 		</draggable>
 	</div>
 </template>
@@ -20,6 +44,7 @@ import editModuleSplit from './modules/split/editModuleSplit'
 import cuid from 'cuid'
 
 export default {
+	props: ['mode', 'uploadImg'],
 	components: {
 		draggable,
 		editModuleImg,
@@ -29,6 +54,20 @@ export default {
 	data() {
 		return {
 			list: [
+				{
+					type: 'text',
+					cuid: 'cjtzb8sd600003g5lra7fr06y',
+					val: {
+						text: 'fdsfdsafdsafsaf',
+						type: 'title_h1_center',
+						backgroundColor: '#41B983',
+						color: 'white'
+					}
+				},
+				{ type: 'img', val: null },
+				{ type: 'img', val: null },
+				{ type: 'img', val: null },
+				{ type: 'img', val: null }
 				/* {
 					type: 'text',
 					val: {
@@ -47,11 +86,29 @@ export default {
 		}
 	},
 	methods: {
+		changeVal(data) {
+			let obj = this.list[data.step]
+			obj._val = data.val
+			this.$set(this.list, data.step, obj)
+		},
 		selectEditModule(data) {
 			this.$emit('selectModule', data.ref)
 		},
 		onStart() {
 			this.$emit('selectModule', null)
+		},
+		getResultList() {
+			let arr = this.list.map(item => {
+				let obj = {}
+				Object.assign(obj, item)
+				if (obj._val) {
+					obj.val = obj.val || {}
+					Object.assign(obj.val, obj._val)
+				}
+				delete obj._val
+				return obj
+			})
+			return arr
 		},
 		onAdd(dragVal) {
 			let obj = {}
@@ -86,5 +143,11 @@ export default {
 	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
+
+	.drag-item {
+		&:last-child {
+			margin-bottom: 40vh;
+		}
+	}
 }
 </style>

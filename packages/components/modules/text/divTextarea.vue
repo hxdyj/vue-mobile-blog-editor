@@ -4,15 +4,39 @@
 			ref="input"
 			@click="clickInput"
 			@blur="onBlur"
-			contenteditable="true"
+			:contenteditable="mode=='edit'?true:false"
 			class="input"
-			:class="{'left':align==='left','center':align==='center','right':align==='right',}"
+			:class="{'left':align==='left','center':align==='center','right':align==='right','mode-edit':mode=='edit'}"
 			@input="inputEvent"
 		></div>
-		<div class="placeholder" v-if="!input">{{placeholder}}</div>
+		<div class="placeholder" :class="{'left':align==='left','center':align==='center','right':align==='right',}" v-if="!input">{{placeholder}}</div>
 	</div>
 </template>
 <script>
+import device from 'current-device'
+/*
+:disabled="mode=='edit'?true:false"
+*/
+function keepLastIndex(obj) {
+	/* 	console.log(obj)
+	console.log(window.getSelection)
+	console.log(document.selection) */
+	if (window.getSelection) {
+		//ie11 10 9 ff safari
+		obj.focus() //解决ff不获取焦点无法定位问题
+		var range = window.getSelection() //创建range
+		range.selectAllChildren(obj) //range 选择obj下所有子内容
+		range.collapseToEnd() //光标移至最后
+	} else if (document.selection) {
+		//ie10 9 8 7 6 5
+		var range = document.selection.createRange() //创建选择对象
+		//var range = document.body.createTextRange();
+		range.moveToElementText(obj) //range定位到obj
+		range.collapse(false) //光标移至最后
+		range.select()
+	}
+}
+
 export default {
 	props: {
 		placeholder: {
@@ -20,6 +44,9 @@ export default {
 		},
 		align: {
 			default: 'left' //left center right
+		},
+		mode: {
+			default: ''
 		}
 	},
 	computed: {},
@@ -31,6 +58,10 @@ export default {
 	},
 	methods: {
 		inputEvent() {
+			let _this = this
+			setTimeout(() => {
+				keepLastIndex(_this.$refs.input)
+			}, 5)
 			this.input = this.$refs.input.innerText.trim()
 			this.$emit('eInput', this.input)
 		},
@@ -44,15 +75,18 @@ export default {
 			this.input = text
 		},
 		clickInput(target) {
-			target.target.scrollIntoView()
+			if (!device.desktop()) {
+				target.target.scrollIntoView()
+			}
 		},
 		onBlur() {
-			let ele = document.getElementById('app')
-			//TODO 判断只有在手机浏览器才这样
-			setTimeout(() => {
-				ele.scrollTop = 0
-				document.body.scrollTop = 0
-			}, 300)
+			if (!device.desktop()) {
+				let ele = document.getElementById('app')
+				setTimeout(() => {
+					ele.scrollTop = 0
+					document.body.scrollTop = 0
+				}, 300)
+			}
 		}
 	},
 	mounted() {}
@@ -64,7 +98,6 @@ export default {
 	position: relative;
 	box-sizing: border-box;
 	.input {
-		-webkit-user-modify: read-write-plaintext-only;
 		position: relative;
 		z-index: 2;
 		outline: none;
@@ -83,13 +116,30 @@ export default {
 		&.right {
 			text-align: right;
 		}
+
+		&.mode-edit {
+			-webkit-user-modify: read-write-plaintext-only;
+		}
 	}
 	.placeholder {
+		width: 100%;
 		position: absolute;
 		top: 0;
 		left: 0px;
 		color: rgba(153, 153, 153, 1);
 		z-index: 0;
+		&.left {
+			text-align: left;
+		}
+		&.center {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+		&.right {
+			text-align: right;
+		}
 	}
 }
 </style>

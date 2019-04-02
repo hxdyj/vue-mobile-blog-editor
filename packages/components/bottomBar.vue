@@ -7,7 +7,7 @@
 			</div>
 			<!-- -----------------------   IMG  ---------------------- -->
 			<!-- paddingImg -->
-			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
+			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
 				<i class="iconfont">&#xe606;</i>
 			</div>
 			<!-- fullImg -->
@@ -17,7 +17,7 @@
 
 			<!-- -----------------------   TEXT  ---------------------- -->
 			<!-- defaultText -->
-			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='default_text'}" @click="changeModuleCompType('default_text')">
+			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':!val.type||val.type=='default_text'}" @click="changeModuleCompType('default_text')">
 				<i class="iconfont">&#xe615;</i>
 			</div>
 			<!-- titleH1Center -->
