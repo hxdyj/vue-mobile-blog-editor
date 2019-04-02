@@ -17,7 +17,7 @@ import paddingWidth from './paddingWidth'
 import mixin from '../../mixin/module.js'
 export default {
 	mixins: [mixin],
-	props: ['uploadImg'],
+	props: ['uploadImg', 'defaultImg'],
 	data() {
 		return {
 			type: 'img'
@@ -25,9 +25,7 @@ export default {
 	},
 	computed: {
 		getSrc() {
-			return this.val.src
-				? this.val.src
-				: Vue.vueMobileBlogEditorConfig.defaultImgSrc
+			return this.val.src ? this.val.src : this.defaultImg
 		}
 	},
 	components: { fullWidth, paddingWidth },

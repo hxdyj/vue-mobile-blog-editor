@@ -26,14 +26,14 @@ plugin.install = function(Vue, options) {
 		// 逻辑...
 	} */
 	// Vue.directive(fixDragCompHeight.name, fixDragCompHeight.options)
-	if (!options) {
+	/* 	if (!options) {
 		options = {}
 	} else {
 		if (!options.defaultImgSrc) {
 			options['defaultImgSrc'] =
 				'https://scdn.yourbay.net/default/default_img.png'
 		}
-	}
+	} */
 
 	Vue.vueMobileBlogEditorConfig = options
 	// Vue.directive(generateId.name, generateId.options)

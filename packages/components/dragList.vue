@@ -14,6 +14,7 @@
 				></edit-module-text>
 				<edit-module-img
 					:upload-img="uploadImg"
+					:default-img="defaultImg"
 					:mode="mode"
 					:step="index"
 					:cuid="element.cuid"
@@ -44,7 +45,7 @@ import editModuleSplit from './modules/split/editModuleSplit'
 import cuid from 'cuid'
 
 export default {
-	props: ['mode', 'uploadImg'],
+	props: ['mode', 'uploadImg', 'defaultImg'],
 	components: {
 		draggable,
 		editModuleImg,

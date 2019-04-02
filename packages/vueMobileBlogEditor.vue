@@ -2,7 +2,7 @@
 	<div style="display:flex;width:100%;height:100%;flex-direction:column;">
 		<div id="vue-mobile-blog-editor">
 			<top-bar v-if="mode=='edit'" class="vue-mobile-blog-editor-page-top"></top-bar>
-			<drag-list :upload-img="uploadImg" :mode="mode" class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
+			<drag-list :default-img="defaultImg" :upload-img="uploadImg" :mode="mode" class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
 			<bottom-bar
 				v-if="mode=='edit'"
 				class="vue-mobile-blog-editor-page-bottom"
@@ -29,6 +29,9 @@ export default {
 		},
 		uploadImg: {
 			default: null
+		},
+		defaultImg: {
+			default: 'https://scdn.yourbay.net/default/default_img.png'
 		}
 	},
 	components: {
