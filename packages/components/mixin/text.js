@@ -12,7 +12,10 @@ let mixin = {
 		}
 	},
 	mounted() {
-		this.$refs.textarea.setVal(this.text)
+		let _this = this
+		setTimeout(() => {
+			if (_this.$refs.textarea) _this.$refs.textarea.setVal(_this.text)
+		}, 10)
 	}
 }
 

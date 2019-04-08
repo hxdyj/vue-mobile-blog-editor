@@ -1,6 +1,6 @@
 <template>
-	<div style="display:flex;width:100%;height:100%;flex-direction:column;">
-		<div id="vue-mobile-blog-editor">
+	<div style="width:100%;height:100%;flex-direction:column;" :style="{display:mode=='edit'?'flex':'block'}">
+		<div id="vue-mobile-blog-editor" :class="{'edit':mode=='edit'}">
 			<top-bar v-if="mode=='edit'" class="vue-mobile-blog-editor-page-top"></top-bar>
 			<drag-list :default-img="defaultImg" :upload-img="uploadImg" :mode="mode" class="vue-mobile-blog-editor-page-list" ref="drag_list" @selectModule="selectModule"></drag-list>
 			<bottom-bar
@@ -124,14 +124,17 @@ export default {
 #vue-mobile-blog-editor {
 	flex-grow: 1;
 	position: relative;
-	min-height: 100%;
-	max-height: 100%;
-	overflow: hidden;
-	height: 100%;
 	min-width: 100%;
 	max-width: 100%;
 	width: 100%;
-	display: flex;
+
+	&.edit {
+		display: flex;
+		min-height: 100%;
+		max-height: 100%;
+		overflow: hidden;
+		height: 100%;
+	}
 	flex-direction: column;
 	.vue-mobile-blog-editor-page-top {
 		flex-grow: 0;

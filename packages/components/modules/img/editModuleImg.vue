@@ -4,6 +4,7 @@
 		<!-- {{step}} -->
 		<full-width v-if="val.type=='full_width'" :src="getSrc"></full-width>
 		<padding-width v-if="!val.type||val&&val.type=='padding_width'" :src="getSrc"></padding-width>
+		<circle-center v-if="val.type=='circle_center'" :src="getSrc"></circle-center>
 		<div class="edit-module-options" v-show="select">
 			<i class="iconfont-comp" @click.stop="upload">&#xe6a1;</i>
 			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
@@ -14,6 +15,7 @@
 <script>
 import fullWidth from './fullWidth'
 import paddingWidth from './paddingWidth'
+import circleCenter from './circleCenter'
 import mixin from '../../mixin/module.js'
 export default {
 	mixins: [mixin],
@@ -28,7 +30,7 @@ export default {
 			return this.val.src ? this.val.src : this.defaultImg
 		}
 	},
-	components: { fullWidth, paddingWidth },
+	components: { fullWidth, paddingWidth, circleCenter },
 	methods: {
 		setSrc(src) {
 			this.$set(this.val, 'src', src)
@@ -57,6 +59,7 @@ export default {
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
+	margin: 10px 0px;
 	.img {
 		width: 100%;
 	}

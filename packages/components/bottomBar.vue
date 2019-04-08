@@ -14,6 +14,10 @@
 			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
 				<i class="iconfont-comp">&#xe6b5;</i>
 			</div>
+			<!-- circleImg -->
+			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='circle_center'}" @click="changeModuleCompType('circle_center')">
+				<i class="iconfont-comp">&#xe62e;</i>
+			</div>
 
 			<!-- -----------------------   TEXT  ---------------------- -->
 			<!-- defaultText -->

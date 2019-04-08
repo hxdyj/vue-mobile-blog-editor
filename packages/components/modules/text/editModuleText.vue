@@ -62,7 +62,18 @@ export default {
 		return {
 			type: 'text',
 			modalColor: false,
-			colors: ['#146091', '#41B983', '#364A5F', 'white']
+			colors: [
+				'white',
+				'#364A5F',
+				'#146091',
+				'#41B983',
+				'#ec6d00',
+				'#ef8200',
+				'#f5ac3c',
+				'#017291',
+				'#76c7c8',
+				'#2cadcf'
+			]
 		}
 	},
 	computed: {
@@ -115,10 +126,10 @@ export default {
 
 .color-picker {
 	position: absolute;
-	width: 60%;
+	width: 70%;
 	height: 300px;
 	top: 25%;
-	left: 20%;
+	left: 15%;
 	background: #f1f1f1;
 	border-radius: 4px;
 	border: 1px solid rgb(224, 224, 224);
@@ -126,8 +137,9 @@ export default {
 
 	.close-color-picker-icon {
 		position: absolute;
-		right: 6px;
-		top: 6px;
+		right: 7px;
+		top: 4px;
+		font-size: 18px;
 		color: #aaaaaa;
 	}
 	.color-section {
@@ -137,7 +149,7 @@ export default {
 		.info {
 			display: flex;
 			.color-title {
-				font-size: 28px;
+				font-size: 16px;
 				font-weight: 500;
 				color: #364a60 !important;
 			}
@@ -151,14 +163,13 @@ export default {
 		}
 
 		.color-panel {
-			margin-top: 20px;
+			margin-top: 10px;
 			display: flex;
 			flex-wrap: wrap;
 			.color-item {
-				margin-right: 20px;
-				margin-bottom: 20px;
-				width: 26px;
-				height: 26px;
+				margin: 10px;
+				width: 24px;
+				height: 24px;
 				border-radius: 2px;
 			}
 		}

@@ -1,7 +1,7 @@
 <template>
-	<div class="comp-drag-list" ref="list">
+	<div class="comp-drag-list" ref="list" :class="{'edit':mode=='edit'}">
 		<!-- {{list}} -->
-		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd">
+		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd" :class="{'edit':mode=='edit'}">
 			<div :class="{'drag-item':mode=='edit'}" v-for="(element,index) in list" :key="element.cuid">
 				<edit-module-text
 					:mode="mode"
@@ -111,16 +111,19 @@ export default {
 .comp-drag-list {
 	overflow: hidden;
 	flex-direction: column;
-	display: flex;
+	&.edit {
+		display: flex;
+	}
 }
 .drag-comp {
 	flex-grow: 1;
-	min-height: 100%;
-	max-height: 100%;
-	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-
+	&.edit {
+		min-height: 100%;
+		max-height: 100%;
+		overflow-y: auto;
+	}
 	.drag-item {
 		&:last-child {
 			margin-bottom: 40vh;

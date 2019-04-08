@@ -9,7 +9,7 @@
 			:class="{'left':align==='left','center':align==='center','right':align==='right','mode-edit':mode=='edit'}"
 			@input="inputEvent"
 		></div>
-		<div class="placeholder" :class="{'left':align==='left','center':align==='center','right':align==='right',}" v-if="!input">{{placeholder}}</div>
+		<div class="placeholder" :class="{'left':align==='left','center':align==='center','right':align==='right',}" v-if="!input&&mode=='edit'">{{placeholder}}</div>
 	</div>
 </template>
 <script>
