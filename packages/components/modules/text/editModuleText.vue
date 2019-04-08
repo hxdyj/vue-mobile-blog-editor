@@ -127,7 +127,7 @@ export default {
 .color-picker {
 	position: absolute;
 	width: 70%;
-	height: 300px;
+	height: auto;
 	top: 25%;
 	left: 15%;
 	background: #f1f1f1;
@@ -145,8 +145,9 @@ export default {
 	.color-section {
 		height: 50%;
 		box-sizing: border-box;
-		padding: 5%;
+
 		.info {
+			padding: 5%;
 			display: flex;
 			.color-title {
 				font-size: 16px;
@@ -163,13 +164,14 @@ export default {
 		}
 
 		.color-panel {
-			margin-top: 10px;
+			padding-left: 3%;
+			margin-bottom: 10px;
 			display: flex;
 			flex-wrap: wrap;
 			.color-item {
-				margin: 10px;
-				width: 24px;
-				height: 24px;
+				margin: 8px;
+				width: 23px;
+				height: 23px;
 				border-radius: 2px;
 			}
 		}
