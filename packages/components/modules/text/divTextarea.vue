@@ -59,9 +59,9 @@ export default {
 	methods: {
 		inputEvent() {
 			let _this = this
-			setTimeout(() => {
+			/* setTimeout(() => {
 				keepLastIndex(_this.$refs.input)
-			}, 5)
+			}, 5) */
 			let val = this.$refs.input.innerText.trim()
 			this.input = val
 			this.$emit('eInput', val)

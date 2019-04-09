@@ -23,5 +23,6 @@ export default {
 	justify-content: center;
 	padding: 10px 15px;
 	box-sizing: border-box;
+	font-size:13.72px;
 }
 </style>
