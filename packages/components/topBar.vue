@@ -50,6 +50,7 @@ export default {
 	min-height: $barH;
 	border-bottom: 1px solid #7d7d7d;
 	overflow-x: auto;
+	overflow-y: hidden;
 	box-sizing: border-box;
 	width: 100%;
 	min-width: 100%;
