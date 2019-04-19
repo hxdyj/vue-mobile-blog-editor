@@ -1,6 +1,6 @@
 # v0.0.13 todo list:
 
-1. 删除 img 的 plugin 接口
+1. Editor plugin provide delete img func white delete img type component.
 
 # other func
 
