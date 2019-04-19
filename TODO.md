@@ -1,6 +1,7 @@
 # v0.0.13 todo list:
 
 1. Editor plugin provide delete img func white delete img type component.
+2. Editor plugin document.
 
 # other func
 
