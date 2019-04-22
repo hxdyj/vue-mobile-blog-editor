@@ -19,7 +19,7 @@ export default {
 	data() {
 		return {
 			list: [
-				{
+				/* {
 					type: 'text',
 					val: {
 						text: 'fdsaffdsafffdsaf',
@@ -94,7 +94,7 @@ export default {
 					val: { text: 'fdsafadsf' },
 					cuid: 'cju7xpwp9000a3r5rn6xt0i2x1'
 				},
-				{ type: 'img', val: null, cuid: 'cju7xprf900083r5r33yxk3n31' }
+				{ type: 'img', val: null, cuid: 'cju7xprf900083r5r33yxk3n31' } */
 			]
 		}
 	},
@@ -108,9 +108,7 @@ export default {
 		},
 		uploadImg: function(src, setSrc) {
 			alert('确定更换图片么？')
-			setSrc(
-				'http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg'
-			)
+			setSrc('http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg')
 			/* Dialog.alert({
 			message: '确定更换图片么？'
 		}).then(() => {
