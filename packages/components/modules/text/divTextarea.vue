@@ -76,7 +76,7 @@ export default {
 			this.input = text
 		},
 		clickInput(target) {
-			if (!device.desktop()) {
+			if (!device.desktop()&&this.mode=='edit') {
 				target.target.scrollIntoView()
 			}
 		},
