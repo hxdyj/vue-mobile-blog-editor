@@ -139,6 +139,7 @@ export default {
 	flex-grow: 1;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
+	background: url('https://scdn.yourbay.net/vue_mobile_blog_editor/img/list_empty_tip.png');
 	background-size: 80%;
 	background-repeat: no-repeat;
 	background-position: 30% 14px;
