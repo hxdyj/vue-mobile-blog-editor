@@ -40,7 +40,7 @@ function keepLastIndex(obj) {
 export default {
 	props: {
 		placeholder: {
-			default: 'TEXT'
+			default: '请输入文字'
 		},
 		align: {
 			default: 'left' //left center right

@@ -2,30 +2,30 @@
 	<div class="comp-bottom-bar">
 		<div class="bottom-bar-panel">
 			<!-- -----------------------   Globel  ---------------------- -->
-			<div class="bottom-bar-item" v-if="select" @click="delModuleComp()">
+			<div class="bottom-bar-item" title="删除控件" v-if="select" @click="delModuleComp()">
 				<i class="iconfont-comp">&#xe644;</i>
 			</div>
 			<!-- -----------------------   IMG  ---------------------- -->
 			<!-- paddingImg -->
-			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':!val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
+			<div class="bottom-bar-item" v-if="type=='img'" title="边距居中" :class="{'active':!val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
 				<i class="iconfont-comp">&#xe606;</i>
 			</div>
 			<!-- fullImg -->
-			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
+			<div class="bottom-bar-item" v-if="type=='img'" title="宽度铺满" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
 				<i class="iconfont-comp">&#xe6b5;</i>
 			</div>
 			<!-- circleImg -->
-			<div class="bottom-bar-item" v-if="type=='img'" :class="{'active':val&&val.type=='circle_center'}" @click="changeModuleCompType('circle_center')">
+			<div class="bottom-bar-item" v-if="type=='img'" title="圆形居中" :class="{'active':val&&val.type=='circle_center'}" @click="changeModuleCompType('circle_center')">
 				<i class="iconfont-comp">&#xe62e;</i>
 			</div>
 
 			<!-- -----------------------   TEXT  ---------------------- -->
 			<!-- defaultText -->
-			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':!val.type||val.type=='default_text'}" @click="changeModuleCompType('default_text')">
+			<div class="bottom-bar-item" v-if="type=='text'" title="设置为正文" :class="{'active':!val.type||val.type=='default_text'}" @click="changeModuleCompType('default_text')">
 				<i class="iconfont-comp">&#xe615;</i>
 			</div>
 			<!-- titleH1Center -->
-			<div class="bottom-bar-item" v-if="type=='text'" :class="{'active':val&&val.type=='title_h1_center'}" @click="changeModuleCompType('title_h1_center')">
+			<div class="bottom-bar-item" v-if="type=='text'" title="设置为标题" :class="{'active':val&&val.type=='title_h1_center'}" @click="changeModuleCompType('title_h1_center')">
 				<i class="iconfont-comp">&#xe62d;</i>
 			</div>
 		</div>

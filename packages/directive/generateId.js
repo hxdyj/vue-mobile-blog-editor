@@ -1,5 +1,5 @@
 import cuid from 'cuid'
-// `generate-id` //当以背景图形式加载图片时，设置加载失败的默认背景图
+// `generate-id`
 export default {
 	name: 'generate-id',
 	options: {

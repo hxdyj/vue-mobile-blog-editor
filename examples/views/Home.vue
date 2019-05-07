@@ -8,7 +8,7 @@
 				:upload-img="uploadImg"
 			></vue-mobile-blog-editor>
 		</div>
-		<p @click="getList">getData</p>
+		<!-- <p @click="getList">getData</p> -->
 	</div>
 </template>
 
