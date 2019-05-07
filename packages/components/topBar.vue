@@ -5,12 +5,13 @@
 				<i class="iconfont-comp top-bar-icon" title="文本" v-if="top.type=='text'">&#xe62c;</i>
 				<i class="iconfont-comp top-bar-icon" title="图片" v-if="top.type=='img'">&#xe62b;</i>
 				<i class="iconfont-comp top-bar-icon" title="分割线" v-if="top.type=='split'">&#xe66e;</i>
-				<i class="iconfont-comp-static help" title="帮助" @click="modalHelp=true" v-if="top.type=='help'">&#xe6f8;</i>
+				<!-- <i class="iconfont-comp-static help" title="帮助" @click="modalHelp=true" v-if="top.type=='help'">&#xe6f8;</i> -->
 				<!-- <i class="iconfont-comp-static" v-if="top.type=='split'">&#xe66e;</i> -->
 				<!-- <i class="iconfont-comp" v-if="top.type=='module'">&#xe62a;</i>
 				<i class="iconfont-comp" v-if="top.type=='del'">&#xe644;</i>-->
 			</div>
 		</draggable>
+		<div class="help-tip-text" @click="modalHelp=true">帮助手册</div>
 		<div class="help-modal" v-if="modalHelp">
 			<div class="help-body">
 				<div class="help-header">
@@ -66,7 +67,7 @@
 						<div class="content">
 							<div>
 								单击选中图片控件以后点击
-								<i class="iconfont-comp" style="font-size:18px">&#xe6a1;</i>，选择图片替换的之前的图片
+								<i class="iconfont-comp" style="font-size:18px">&#xe6a1;</i>，选择图片替换之前的图片
 							</div>
 							<img style="width:70vw;" src="../assets/img/img_module_usage.gif" alt>
 						</div>
@@ -99,12 +100,12 @@ export default {
 	},
 	data() {
 		return {
-			modalHelp: true,
+			modalHelp: false,
 			topList: [
 				getObj('text'),
 				getObj('img'),
-				getObj('split'),
-				getObj('help')
+				getObj('split')
+				// getObj('help')
 				/* getObj('module'),
 				getObj('del') */
 			],
@@ -130,6 +131,13 @@ export default {
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
+	position: relative;
+	.help-tip-text {
+		position: absolute;
+		right: 10px;
+		top: 12px;
+		font-size: 14px;
+	}
 	.top-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;

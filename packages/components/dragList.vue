@@ -1,7 +1,15 @@
 <template>
 	<div class="comp-drag-list" ref="list" :class="{'edit':mode=='edit'}">
 		<!-- {{list}} -->
-		<draggable v-model="list" :options="{group:'people',handle:'.edit-module-drag-key'}" class="drag-comp" @start="onStart" @add="onAdd" :class="{'edit':mode=='edit'}">
+		<draggable
+			v-model="list"
+			ref="list_body"
+			:options="{group:'people',handle:'.edit-module-drag-key'}"
+			class="drag-comp"
+			@start="onStart"
+			@add="onAdd"
+			:class="{'edit':mode=='edit'}"
+		>
 			<div :class="{'drag-item':mode=='edit'}" v-for="(element,index) in list" :key="element.cuid">
 				<edit-module-text
 					:mode="mode"
@@ -52,6 +60,18 @@ export default {
 		editModuleText,
 		editModuleSplit
 	},
+	watch: {
+		list: function() {
+			if (this.list.length == 0) {
+				this.$refs.list_body.$el.style.background = 'url(https://scdn.yourbay.net/vue_mobile_blog_editor/img/list_empty_tip.png)'
+				this.$refs.list_body.$el.style.backgroundSize = '80vw'
+				this.$refs.list_body.$el.style.backgroundRepeat = 'no-repeat'
+				this.$refs.list_body.$el.style.backgroundPosition = '7vw 14px'
+			} else {
+				this.$refs.list_body.$el.style.background = ''
+			}
+		}
+	},
 	data() {
 		return {
 			list: [],
@@ -75,7 +95,7 @@ export default {
 			this.$emit('selectModule', null)
 		},
 		getResultList() {
-			let arr = this.list.map(item => {
+			let arr = this.list.map((item) => {
 				let obj = {}
 				Object.assign(obj, item)
 				if (obj._val) {
@@ -119,6 +139,9 @@ export default {
 	flex-grow: 1;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
+	background-size: 80vw;
+	background-repeat: no-repeat;
+	background-position: 7vw 14px;
 	&.edit {
 		min-height: 100%;
 		max-height: 100%;
