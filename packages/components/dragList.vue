@@ -68,7 +68,7 @@ export default {
 				this.$refs.list_body.$el.style.backgroundRepeat = 'no-repeat'
 				this.$refs.list_body.$el.style.backgroundPosition = '30% 14px'
 			} else {
-				this.$refs.list_body.$el.style.background = ''
+				this.$refs.list_body.$el.style.background = 'none'
 			}
 		}
 	},
