@@ -64,9 +64,9 @@ export default {
 		list: function() {
 			if (this.list.length == 0) {
 				this.$refs.list_body.$el.style.background = 'url(https://scdn.yourbay.net/vue_mobile_blog_editor/img/list_empty_tip.png)'
-				this.$refs.list_body.$el.style.backgroundSize = '80vw'
+				this.$refs.list_body.$el.style.backgroundSize = '80%'
 				this.$refs.list_body.$el.style.backgroundRepeat = 'no-repeat'
-				this.$refs.list_body.$el.style.backgroundPosition = '7vw 14px'
+				this.$refs.list_body.$el.style.backgroundPosition = '30% 14px'
 			} else {
 				this.$refs.list_body.$el.style.background = ''
 			}
@@ -139,9 +139,9 @@ export default {
 	flex-grow: 1;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-	background-size: 80vw;
+	background-size: 80%;
 	background-repeat: no-repeat;
-	background-position: 7vw 14px;
+	background-position: 30% 14px;
 	&.edit {
 		min-height: 100%;
 		max-height: 100%;
@@ -149,7 +149,7 @@ export default {
 	}
 	.drag-item {
 		&:last-child {
-			margin-bottom: 40vh;
+			margin-bottom: 100px;
 		}
 	}
 

@@ -34,11 +34,11 @@
 							<div class="text">编辑器介绍</div>
 						</div>
 						<div class="content">
-							<img src="../assets/img/help_editor_content.png" style="width:70vw;" alt>
+							<img src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/help_editor_content.png" style="width:70vw;max-width:400px" alt>
 							<div>（1）将控件拖拽至编辑区域即可添加相应控件进行编辑</div>
-							<img style="margin-top:10px;width:70vw;" src="../assets/img/add_weight_to_edite_area.gif" alt>
+							<img style="margin-top:10px;width:70vw;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/add_weight_to_edite_area.gif" alt>
 							<div>（2）点击添加的控件选中控件，即可对控件进行属性编辑或者拖拽排序。以文本控件进行演示：</div>
-							<img style="margin-top:10px;width:70vw;" src="../assets/img/text_module_usage.gif" alt>
+							<img style="margin-top:10px;width:70vw;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/text_module_usage.gif" alt>
 						</div>
 					</div>
 					<div class="help-item">
@@ -69,7 +69,7 @@
 								单击选中图片控件以后点击
 								<i class="iconfont-comp" style="font-size:18px">&#xe6a1;</i>，选择图片替换之前的图片
 							</div>
-							<img style="width:70vw;" src="../assets/img/img_module_usage.gif" alt>
+							<img style="width:70vw;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/img_module_usage.gif" alt>
 						</div>
 					</div>
 					<div class="help-item">
