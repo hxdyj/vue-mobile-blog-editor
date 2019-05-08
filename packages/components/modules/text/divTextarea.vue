@@ -37,6 +37,28 @@ function keepLastIndex(obj) {
 	}
 }
 
+/* function triggerEvent(element, eventType) {
+	var e
+	if (element.dispatchEvent) {
+		//正常情况
+		var e = document.createEvent('MouseEvents')
+		e.initEvent('click', true, true)
+		element.dispatchEvent(e)
+		debugger
+	} else if (element.fireEvent) {
+		//IE
+		e = document.createEventObject()
+		e.button = 1
+		element.fireEvent('on' + eventType, e)
+	} else if (element['on' + eventType]) {
+		element['on' + eventType].call()
+	}
+
+
+	// triggerEvent(this.$refs.color, 'onclick')
+
+} */
+
 export default {
 	props: {
 		placeholder: {
@@ -55,6 +77,13 @@ export default {
 		return {
 			input: ''
 		}
+	},
+	mounted() {
+		let _this = this
+		let ele = this.$refs.input
+		setTimeout(() => {
+			ele.focus()
+		}, 300)
 	},
 	methods: {
 		inputEvent() {
@@ -89,8 +118,7 @@ export default {
 				}, 300)
 			}
 		}
-	},
-	mounted() {}
+	}
 }
 </script>
 <style lang="scss" scoped>

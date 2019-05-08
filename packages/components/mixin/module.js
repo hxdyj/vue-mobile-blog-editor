@@ -64,6 +64,8 @@ let mixin = {
 			}
 			this.val = Object.assign({}, Object.assign(this.val, this.fillVal))
 		}
+
+		this.selectEditModule()
 	}
 }
 
