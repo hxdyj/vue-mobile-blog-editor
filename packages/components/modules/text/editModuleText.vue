@@ -5,8 +5,8 @@
 		<default-text :mode="mode" :text="getText" @eInput="setText" v-if="!val.type||val.type=='default_text'"></default-text>
 		<title-h1-center :mode="mode" :text="getText" @eInput="setText" v-if="val.type=='title_h1_center'"></title-h1-center>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont-comp" @click.stop="selectColor">&#xe6a1;</i>
-			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
+			<i class="iconfont-comp edit-module-edit-icon" title="更改颜色" @click.stop="selectColor">&#xe6a1;</i>
+			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe616;</i>
 		</div>
 		<div class="color-picker" v-if="modalColor">
 			<i class="iconfont-comp close-color-picker-icon" @click="modalColor=false">&#xe6a6;</i>
@@ -43,18 +43,7 @@ export default {
 		return {
 			type: 'text',
 			modalColor: false,
-			colors: [
-				'white',
-				'#364A5F',
-				'#146091',
-				'#41B983',
-				'#ec6d00',
-				'#ef8200',
-				'#f5ac3c',
-				'#017291',
-				'#76c7c8',
-				'#2cadcf'
-			]
+			colors: ['white', '#364A5F', '#146091', '#41B983', '#ec6d00', '#ef8200', '#f5ac3c', '#017291', '#76c7c8', '#2cadcf']
 		}
 	},
 	computed: {

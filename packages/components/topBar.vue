@@ -133,6 +133,7 @@ export default {
 	max-width: 100%;
 	position: relative;
 	.help-tip-text {
+		cursor: pointer;
 		position: absolute;
 		right: 10px;
 		top: 12px;

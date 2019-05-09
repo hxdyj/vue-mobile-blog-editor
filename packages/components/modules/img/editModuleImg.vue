@@ -6,8 +6,8 @@
 		<padding-width v-if="!val.type||val&&val.type=='padding_width'" :src="getSrc"></padding-width>
 		<circle-center v-if="val.type=='circle_center'" :src="getSrc"></circle-center>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont-comp" @click.stop="upload">&#xe6a1;</i>
-			<i class="iconfont-comp edit-module-drag-key">&#xe616;</i>
+			<i class="iconfont-comp edit-module-edit-icon" title="上传图片" @click.stop="upload">&#xe6a1;</i>
+			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe616;</i>
 		</div>
 	</div>
 </template>
@@ -37,15 +37,10 @@ export default {
 		},
 		upload() {
 			let uploadFunc = this.uploadImg
-			if (
-				uploadFunc &&
-				/Function/.test(Object.prototype.toString.call(uploadFunc))
-			) {
+			if (uploadFunc && /Function/.test(Object.prototype.toString.call(uploadFunc))) {
 				uploadFunc(this.val.src ? this.val.src : null, this.setSrc)
 			} else {
-				console.error(
-					'please set vue-mobile-blog-editor uploadImg as func'
-				)
+				console.error('please set vue-mobile-blog-editor uploadImg as func')
 			}
 		}
 	}
