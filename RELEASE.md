@@ -1,3 +1,7 @@
+## v0.0.20
+
+1. bottom bar cursor
+
 ## v0.0.19
 
 1. fixed drag to edior area auto select component,but while setData not auto select component.

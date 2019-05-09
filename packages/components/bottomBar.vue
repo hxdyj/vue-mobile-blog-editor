@@ -72,6 +72,7 @@ export default {
 		display: flex;
 		flex-wrap: nowrap;
 		.bottom-bar-item {
+			cursor: pointer;
 			width: $barH;
 			min-height: $barH;
 			display: flex;
