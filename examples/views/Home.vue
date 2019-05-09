@@ -19,7 +19,7 @@ export default {
 	data() {
 		return {
 			list: [
-				/* {
+				{
 					type: 'text',
 					val: {
 						text: 'fdsaffdsafffdsaf',
@@ -37,8 +37,7 @@ export default {
 				{
 					type: 'img',
 					val: {
-						src:
-							'http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg',
+						src: 'http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg',
 						type: 'circle_center'
 					},
 					cuid: 'cju7xozm000053r5rawe1huxs'
@@ -73,8 +72,7 @@ export default {
 				{
 					type: 'img',
 					val: {
-						src:
-							'http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg',
+						src: 'http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg',
 						type: 'circle_center'
 					},
 					cuid: 'cju7xozm000053r5rawe1huxs1'
@@ -94,12 +92,12 @@ export default {
 					val: { text: 'fdsafadsf' },
 					cuid: 'cju7xpwp9000a3r5rn6xt0i2x1'
 				},
-				{ type: 'img', val: null, cuid: 'cju7xprf900083r5r33yxk3n31' } */
+				{ type: 'img', val: null, cuid: 'cju7xprf900083r5r33yxk3n31' }
 			]
 		}
 	},
 	mounted() {
-		this.$refs.editor.setData(this.list)
+		// this.$refs.editor.setData(this.list)
 	},
 	methods: {
 		getList() {

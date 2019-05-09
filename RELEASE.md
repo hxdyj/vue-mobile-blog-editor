@@ -1,3 +1,7 @@
+## v0.0.19
+
+1. fixed drag to edior area auto select component,but while setData not auto select component.
+
 ## v0.0.18
 
 1. 添加鼠标手势提醒

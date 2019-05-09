@@ -1,3 +1,5 @@
+import { timingSafeEqual } from 'crypto'
+
 let mixin = {
 	data: function() {
 		return {
@@ -26,6 +28,9 @@ let mixin = {
 		},
 		mode: {
 			default: ''
+		},
+		_add_type: {
+			default: ''
 		}
 	},
 	methods: {
@@ -33,6 +38,9 @@ let mixin = {
 		selectEditModule() {
 			if (this.mode != 'edit') return
 			this.select = !this.select
+			if (this.select && this.type == 'text' && this._add_type == 'drag') {
+				this.focus()
+			}
 			this.$emit('selectEditModule', {
 				ref: this
 				// cuid: this.$el.getAttribute('generate-id')
@@ -58,14 +66,16 @@ let mixin = {
 		}
 	},
 	mounted() {
+		this.fillVal
 		if (this.fillVal) {
 			if (!this.val) {
 				this.val = {}
 			}
 			this.val = Object.assign({}, Object.assign(this.val, this.fillVal))
 		}
-
-		this.selectEditModule()
+		if (this._add_type == 'drag') {
+			this.selectEditModule()
+		}
 	}
 }
 

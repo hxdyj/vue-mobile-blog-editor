@@ -15,6 +15,7 @@
 					:mode="mode"
 					:step="index"
 					:cuid="element.cuid"
+					:_add_type="element._add_type"
 					:fill-val="element.val"
 					v-if="element.type=='text'"
 					@selectEditModule="selectEditModule"
@@ -26,6 +27,7 @@
 					:mode="mode"
 					:step="index"
 					:cuid="element.cuid"
+					:_add_type="element._add_type"
 					:fill-val="element.val"
 					v-if="element.type=='img'"
 					@selectEditModule="selectEditModule"
@@ -35,6 +37,7 @@
 					:mode="mode"
 					:step="index"
 					:cuid="element.cuid"
+					:_add_type="element._add_type"
 					:fill-val="element.val"
 					v-if="element.type=='split'"
 					@selectEditModule="selectEditModule"
@@ -103,6 +106,7 @@ export default {
 					Object.assign(obj.val, obj._val)
 				}
 				delete obj._val
+				delete obj._add_type
 				return obj
 			})
 			return arr
@@ -111,6 +115,7 @@ export default {
 			let obj = {}
 			Object.assign(obj, this.list[dragVal.newIndex])
 			obj['cuid'] = cuid()
+			obj['_add_type'] = 'drag'
 			this.$set(this.list, dragVal.newIndex, obj)
 		},
 		removeItem(cuid) {

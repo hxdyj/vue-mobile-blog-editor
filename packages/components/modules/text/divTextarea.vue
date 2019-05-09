@@ -78,13 +78,7 @@ export default {
 			input: ''
 		}
 	},
-	mounted() {
-		let _this = this
-		let ele = this.$refs.input
-		setTimeout(() => {
-			ele.focus()
-		}, 300)
-	},
+	mounted() {},
 	methods: {
 		inputEvent() {
 			let _this = this
@@ -94,6 +88,12 @@ export default {
 			let val = this.$refs.input.innerText.trim()
 			this.input = val
 			this.$emit('eInput', val)
+		},
+		focus() {
+			let ele = this.$refs.input
+			setTimeout(() => {
+				ele.focus()
+			}, 300)
 		},
 		getVal() {
 			return {

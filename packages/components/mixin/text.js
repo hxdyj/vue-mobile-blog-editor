@@ -9,6 +9,9 @@ let mixin = {
 	methods: {
 		eInput(text) {
 			this.$emit('eInput', text)
+		},
+		focus() {
+			this.$refs.textarea.focus()
 		}
 	},
 	mounted() {
