@@ -85,7 +85,8 @@ export default {
 			/* setTimeout(() => {
 				keepLastIndex(_this.$refs.input)
 			}, 5) */
-			let val = this.$refs.input.innerText.trim()
+			// let val = this.$refs.input.innerText.trim()
+			let val = this.$refs.input.innerText
 			this.input = val
 			this.$emit('eInput', val)
 		},
@@ -101,7 +102,8 @@ export default {
 			}
 		},
 		setVal(text) {
-			this.$refs.input.innerText = text.trim()
+			// this.$refs.input.innerText = text.trim()
+			this.$refs.input.innerText = text
 			this.input = text
 		},
 		clickInput(target) {

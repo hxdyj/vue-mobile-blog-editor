@@ -56,3 +56,29 @@ $barH: 44px;
 .edit-module-edit-icon {
 	cursor: pointer;
 }
+
+blockquote {
+	background-color: #eae6f3;
+	border-left: 1em solid #5236a0;
+	margin: 1em 0 1em;
+	padding: 1em 1em 1em 1em;
+	position: relative;
+	color: #888;
+}
+blockquote:before {
+	color: #392570;
+	// content: '\201C';
+	font-size: 5em;
+	line-height: 0em;
+	margin-right: 0em;
+	vertical-align: -0.4em;
+}
+blockquote:after {
+	color: #392570;
+	// content: '\201D';
+	font-size: 5em;
+	position: absolute;
+	right: 3px;
+	bottom: 0em;
+	line-height: 0.1em;
+}

@@ -5,6 +5,18 @@
 			<div class="bottom-bar-item" title="删除控件" v-if="select" @click="delModuleComp()">
 				<i class="iconfont-comp">&#xe644;</i>
 			</div>
+			<!-- -----------------------   SPLIT  ---------------------- -->
+
+			<div class="bottom-bar-item" v-if="type=='split'" title="粗线" :class="{'active':!val.type||val&&val.type=='color_line'}" @click="changeModuleCompType('color_line')">
+				<i class="iconfont-comp">&#xe662;</i>
+			</div>
+			<div class="bottom-bar-item" v-if="type=='split'" title="细线" :class="{'active':val&&val.type=='dash_line'}" @click="changeModuleCompType('dash_line')">
+				<i class="iconfont-comp">&#xe641;</i>
+			</div>
+			<!-- <div class="bottom-bar-item" v-if="type=='split'" title="虚线" :class="{'active':val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">
+				<i class="iconfont-comp">&#xe606;</i>
+			</div>-->
+
 			<!-- -----------------------   IMG  ---------------------- -->
 			<!-- paddingImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" title="边距居中" :class="{'active':!val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">

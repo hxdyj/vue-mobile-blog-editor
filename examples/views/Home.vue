@@ -44,7 +44,7 @@ export default {
 				},
 				{
 					type: 'text',
-					val: { type: 'default_text', text: 'fdasfdsa' },
+					val: { type: 'default_text', text: '   fdasfdsa   fdsafdasfsadf   ' },
 					cuid: 'cju7xpigr00073r5rq9r089yz'
 				},
 				{ type: 'split', val: null, cuid: 'cju7xpupf00093r5r7q1bvjfk' },
