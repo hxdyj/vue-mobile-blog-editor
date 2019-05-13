@@ -10,7 +10,10 @@
 			<div class="bottom-bar-item" v-if="type=='split'" title="粗线" :class="{'active':!val.type||val&&val.type=='color_line'}" @click="changeModuleCompType('color_line')">
 				<i class="iconfont-comp">&#xe662;</i>
 			</div>
-			<div class="bottom-bar-item" v-if="type=='split'" title="细线" :class="{'active':val&&val.type=='dash_line'}" @click="changeModuleCompType('dash_line')">
+			<div class="bottom-bar-item" v-if="type=='split'" title="细线" :class="{'active':val&&val.type=='thin_line'}" @click="changeModuleCompType('thin_line')">
+				<i class="iconfont-comp">&#xec1f;</i>
+			</div>
+			<div class="bottom-bar-item" v-if="type=='split'" title="虚线" :class="{'active':val&&val.type=='dash_line'}" @click="changeModuleCompType('dash_line')">
 				<i class="iconfont-comp">&#xe641;</i>
 			</div>
 			<!-- <div class="bottom-bar-item" v-if="type=='split'" title="虚线" :class="{'active':val.type||val&&val.type=='padding_width'}" @click="changeModuleCompType('padding_width')">

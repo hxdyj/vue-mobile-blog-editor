@@ -1,18 +1,15 @@
 <template>
 	<div>
 		<div class="home-page">
-			<vue-mobile-blog-editor
-				mode="edit"
-				:default-img="'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=935292084,2640874667&fm=27&gp=0.jpg'"
-				ref="editor"
-				:upload-img="uploadImg"
-			></vue-mobile-blog-editor>
+			<vue-mobile-blog-editor mode="edit" ref="editor" :upload-img="uploadImg"></vue-mobile-blog-editor>
 		</div>
 		<!-- <p @click="getList">getData</p> -->
 	</div>
 </template>
 
 <script>
+// :default-img="'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=935292084,2640874667&fm=27&gp=0.jpg'"
+
 export default {
 	name: 'home',
 	components: {},
