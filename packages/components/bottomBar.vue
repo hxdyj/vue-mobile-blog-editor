@@ -82,7 +82,9 @@ export default {
 	box-sizing: border-box;
 	overflow-x: auto;
 	min-height: $barH;
+	max-height: $barH;
 	position: relative;
+	overflow-y: hidden;
 	.bottom-bar-panel {
 		display: flex;
 		flex-wrap: nowrap;
