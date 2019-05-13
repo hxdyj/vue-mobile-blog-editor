@@ -98,7 +98,7 @@ export default {
 			box-sizing: border-box;
 			border-right: 1px solid #f4f4f4;
 			color: #2c3e50;
-			background: white;
+			// background: white;
 			&.active {
 				background: #ccc;
 			}
