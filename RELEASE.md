@@ -1,3 +1,7 @@
+## v0.0.23
+
+1. fixed bottom del overflow & help doc icon fixed.
+
 ## v0.0.22
 
 1. fixed ali icon conflict
