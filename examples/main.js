@@ -15,6 +15,7 @@ Vue.use(VueMobileBlogEditor, {
 		'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3365018759,2226705862&fm=27&gp=0.jpg', */
 })
 
+
 Vue.config.productionTip = false
 
 new Vue({

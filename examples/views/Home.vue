@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="home-body">
 		<div class="home-page">
 			<vue-mobile-blog-editor mode="edit" ref="editor" :upload-img="uploadImg"></vue-mobile-blog-editor>
 		</div>
@@ -19,7 +19,7 @@ export default {
 				{
 					type: 'text',
 					val: {
-						text: 'fdsaffdsafffdsaf',
+						text: '   fdsaffdsafffdsaf',
 						backgroundColor: '#017291',
 						color: 'white',
 						type: 'title_h1_center'
@@ -103,7 +103,7 @@ export default {
 		},
 		uploadImg: function(src, setSrc) {
 			alert('确定更换图片么？')
-			setSrc('http://img5.imgtn.bdimg.com/it/u=2230167403,4188800858&fm=26&gp=0.jpg')
+			setSrc('https://scdn.yourbay.net/image/jpg/hd-cover15.jpg')
 			/* Dialog.alert({
 			message: '确定更换图片么？'
 		}).then(() => {
@@ -116,13 +116,20 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-/* .home-page {
-	height: 80vh;
-	width: 400px;
-	border: 1px solid #ccc;
-} */
-.home-page {
+.home-body {
+	width: 100vw;
 	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+.home-page {
+	height: 80vh;
+	width: 360px;
+	border: 1px solid #ccc;
+}
+/* .home-page {
+	height: 100vh;
+} */
 </style>
 

@@ -4,7 +4,7 @@
 		<dash-line v-if="val.type=='dash_line'"></dash-line>
 		<thin-line v-if="val.type=='thin_line'"></thin-line>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe616;</i>
+			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe606;</i>
 		</div>
 	</div>
 </template>

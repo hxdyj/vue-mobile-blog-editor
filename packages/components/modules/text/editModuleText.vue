@@ -6,7 +6,7 @@
 		<title-h1-center ref="module" :mode="mode" :text="getText" @eInput="setText" v-if="val.type=='title_h1_center'"></title-h1-center>
 		<div class="edit-module-options" v-show="select">
 			<i class="iconfont-comp edit-module-edit-icon" title="更改颜色" @click.stop="selectColor">&#xe6a1;</i>
-			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe616;</i>
+			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe606;</i>
 		</div>
 		<div class="color-picker" v-if="modalColor">
 			<i class="iconfont-comp close-color-picker-icon" @click="modalColor=false">&#xe6a6;</i>

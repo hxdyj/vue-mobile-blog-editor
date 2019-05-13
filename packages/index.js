@@ -1,5 +1,5 @@
 let plugin = {}
-
+// require('./style/ali_icon/iconfont')
 import vueMobileBlogEditor from './vueMobileBlogEditor.vue'
 plugin.install = function(Vue, options) {
 	/* // 1. 添加全局方法或属性

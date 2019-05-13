@@ -39,45 +39,47 @@
 							</div>
 							<div class="content">
 								<!-- <img src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/help_editor_content.png" style="width:100%;max-width:400px" alt> -->
-								<blockquote>（1）将控件拖拽至编辑区域即可添加相应控件进行编辑</blockquote>
-								<img style="margin-top:10px;width:100%;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/add_weight_to_edite_area.gif" alt>
-								<blockquote>（2）点击控件进行选中，即可对控件进行属性编辑或者拖拽排序。以文本控件进行演示：</blockquote>
-								<img style="margin-top:10px;width:100%;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/text_module_usage.gif" alt>
+								<blockquote>
+									<p>（1）将控件拖拽至编辑区域</p>
+									<p>（2）点击控件进行选中再做相应修改或排序</p>
+								</blockquote>
+								<div style="font-weight:600;margin-top:10px;">操作演示：</div>
+								<img src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/help.gif" style="width:100%;margin-top:10px" alt>
 							</div>
 						</div>
 						<div class="help-item">
 							<div class="title">
-								<div class="num">2.</div>
+								<div class="num">3.</div>
 								<div class="text">控件说明</div>
 							</div>
 							<div class="content">
 								<blockquote>
-									<i class="iconfont-comp top-bar-icon">&#xe62c;</i>
+									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_text.png'" alt class="iconfont-comp">
 									文本控件，支持输入文字，更换文字颜色以及背景色。选中可设置两种文字格式，正文和标题
 								</blockquote>
 								<blockquote style="margin-top:10px">
-									<i class="iconfont-comp top-bar-icon">&#xe62b;</i>
+									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img.png'" alt class="iconfont-comp">
 									图片控件，可上传图片。支持三种格式：边距居中、宽度铺满、圆形居中
 								</blockquote>
 								<blockquote style="margin-top:10px">
-									<i class="iconfont-comp top-bar-icon">&#xe66e;</i>
-									分割线控件，作用是将连续的文本或者图片加分割的样式，以便区分段落
+									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_split.png'" alt class="iconfont-comp">
+									分割线控件，作用是将连续的文本或者图片加分割的样式，以便区分段落。支持：粗线、细线、虚线
 								</blockquote>
 							</div>
 						</div>
-						<div class="help-item">
+						<!-- <div class="help-item">
 							<div class="title">
 								<div class="num">3.</div>
 								<div class="text">图片控件功能演示</div>
 							</div>
 							<div class="content">
 								<div>
-									单击选中图片控件以后点击
-									<i class="iconfont-comp" style="font-size:18px">&#xe6a1;</i>，选择图片替换之前的图片
+									单击选中图片控件以后点击右边
+									<i class="iconfont-comp" style="font-size:18px;display;inline">&#xe60c;</i>，选择图片替换之前的图片
 								</div>
-								<img style="width:100%;max-width:400px" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/img_module_usage.gif" alt>
+								<img style="width:100%;max-width:400px;margin-top:16px;" src="https://scdn.yourbay.net/vue_mobile_blog_editor/img/img_module_usage.gif" alt>
 							</div>
-						</div>
+						</div>-->
 						<!-- <div class="help-item">
 						<div class="title">
 							<div class="num">4.</div>
@@ -96,7 +98,7 @@
 import topBar from './components/topBar'
 import dragList from './components/dragList'
 import bottomBar from './components/bottomBar'
-// require('./style/ali_icon/iconfont.css')
+require('./style/ali_icon/iconfont.css')
 export default {
 	name: 'vueMobileBlogEditor',
 	props: {
@@ -136,7 +138,7 @@ export default {
 			return this.$refs.drag_list.getResultList()
 		},
 		seeTeachVideo() {
-			window.open('https://scdn.yourbay.net/vue_mobile_blog_editor/video/vue_mobile_blog_editor_usage_video.mp4')
+			window.open('https://scdn.yourbay.net/vue_mobile_blog_editor/video/vue_mobile_blog_editor_usage_video_2.mp4')
 		},
 		openHelpModal() {
 			this.modalHelp = true
@@ -240,9 +242,7 @@ export default {
 	align-items: center;
 	background: rgba(7, 7, 7, 0.719);
 	z-index: 9999;
-	img {
-		border: 1px solid #ccc;
-	}
+
 	.help-body {
 		width: 90%;
 		height: 80%;
