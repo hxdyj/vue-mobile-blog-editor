@@ -6,7 +6,7 @@
 		<padding-width v-if="!val.type||val&&val.type=='padding_width'" :src="getSrc"></padding-width>
 		<circle-center v-if="val.type=='circle_center'" :src="getSrc"></circle-center>
 		<div class="edit-module-options" v-show="select">
-			<i class="iconfont-comp edit-module-edit-icon" style="font-size:18px" title="上传图片" @click.stop="upload">&#xe60c;</i>
+			<i class="iconfont-comp edit-module-edit-icon" style="font-size:18px" title="上传图片" @click.stop="upload">&#xe60f4;</i>
 			<i class="iconfont-comp edit-module-drag-key" title="拖拽">&#xe606;</i>
 		</div>
 	</div>

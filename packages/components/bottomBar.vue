@@ -3,7 +3,7 @@
 		<div class="bottom-bar-panel">
 			<!-- -----------------------   Globel  ---------------------- -->
 			<div class="bottom-bar-item del" title="删除控件" v-if="select" @click="delModuleComp()">
-				<i class="iconfont-comp">&#xe605;</i>
+				<i class="iconfont-comp">&#xe60f1;</i>
 			</div>
 			<!-- -----------------------   SPLIT  ---------------------- -->
 
@@ -27,7 +27,7 @@
 			</div>
 			<!-- fullImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" title="宽度铺满" :class="{'active':val&&val.type=='full_width'}" @click="changeModuleCompType('full_width')">
-				<i class="iconfont-comp" style="font-size:18px">&#xe60a;</i>
+				<i class="iconfont-comp" style="font-size:18px">&#xe60f3;</i>
 			</div>
 			<!-- circleImg -->
 			<div class="bottom-bar-item" v-if="type=='img'" title="圆形居中" :class="{'active':val&&val.type=='circle_center'}" @click="changeModuleCompType('circle_center')">

@@ -54,15 +54,15 @@
 							</div>
 							<div class="content">
 								<blockquote>
-									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_text.png'" alt class="iconfont-comp">
+									<img style="display:inline" :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_text.png'" alt class="iconfont-comp">
 									文本控件，支持输入文字，更换文字颜色以及背景色。选中可设置两种文字格式，正文和标题
 								</blockquote>
 								<blockquote style="margin-top:10px">
-									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img.png'" alt class="iconfont-comp">
+									<img style="display:inline" :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img.png'" alt class="iconfont-comp">
 									图片控件，可上传图片。支持三种格式：边距居中、宽度铺满、圆形居中
 								</blockquote>
 								<blockquote style="margin-top:10px">
-									<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_split.png'" alt class="iconfont-comp">
+									<img style="display:inline" :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_split.png'" alt class="iconfont-comp">
 									分割线控件，作用是将连续的文本或者图片加分割的样式，以便区分段落。支持：粗线、细线、虚线
 								</blockquote>
 							</div>

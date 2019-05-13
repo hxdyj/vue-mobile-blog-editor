@@ -16,7 +16,7 @@
 			</div>
 		</draggable>
 		<div class="help-tip-text" @click="openHelpModal">
-			<i class="iconfont-comp" style="font-size:18px">&#xe601;</i>
+			<i class="iconfont-comp" style="font-size:18px">&#xe60f2;</i>
 			<div style="position:relative;top:-3px;">帮助手册</div>
 		</div>
 	</div>
