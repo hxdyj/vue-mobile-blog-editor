@@ -1,3 +1,7 @@
+## v0.0.26
+
+1. fixed text css white space to pre wrap.
+
 ## v0.0.25
 
 1. fixed text css white space to pre white display mode. and top icon drag tip.

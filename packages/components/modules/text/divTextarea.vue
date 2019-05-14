@@ -135,7 +135,7 @@ export default {
 		box-sizing: border-box;
 		word-break: break-all;
 		background: transparent;
-		white-space: pre;
+		white-space: pre-wrap;
 		&.left {
 			text-align: left;
 		}
@@ -150,7 +150,6 @@ export default {
 		}
 
 		&.mode-edit {
-			white-space: normal !important;
 			-webkit-user-modify: read-write-plaintext-only;
 		}
 	}

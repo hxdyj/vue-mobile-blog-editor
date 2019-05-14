@@ -1,7 +1,7 @@
 <template>
 	<div class="home-body">
 		<div class="home-page">
-			<vue-mobile-blog-editor mode="edit" ref="editor" :upload-img="uploadImg"></vue-mobile-blog-editor>
+			<vue-mobile-blog-editor mode="display" ref="editor" :upload-img="uploadImg"></vue-mobile-blog-editor>
 		</div>
 		<p @click="getList">getData</p>
 	</div>
@@ -19,7 +19,7 @@ export default {
 				{
 					type: 'text',
 					val: {
-						text: '   fdsaffdsafffdsaf',
+						text: '   fdsaffdsafffdsaf三扥as扥dsa房东af大骚动发达森大森动发动发送大房东发as扥',
 						backgroundColor: '#017291',
 						color: 'white',
 						type: 'title_h1_center'
