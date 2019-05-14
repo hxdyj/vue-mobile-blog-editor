@@ -3,7 +3,7 @@
 		<div class="home-page">
 			<vue-mobile-blog-editor mode="edit" ref="editor" :upload-img="uploadImg"></vue-mobile-blog-editor>
 		</div>
-		<!-- <p @click="getList">getData</p> -->
+		<p @click="getList">getData</p>
 	</div>
 </template>
 

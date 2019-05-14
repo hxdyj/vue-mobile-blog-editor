@@ -1,3 +1,7 @@
+## v0.0.24
+
+1. fixed text css white space to pre.
+
 ## v0.0.23
 
 1. fixed bottom del overflow & help doc icon fixed.

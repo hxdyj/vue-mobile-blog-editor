@@ -134,6 +134,7 @@ export default {
 		outline: none;
 		box-sizing: border-box;
 		word-break: break-all;
+		white-space: pre;
 		background: transparent;
 		&.left {
 			text-align: left;
