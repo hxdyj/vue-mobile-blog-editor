@@ -103,7 +103,7 @@ export default {
 	name: 'vueMobileBlogEditor',
 	props: {
 		mode: {
-			default: 'edit' //edit show
+			default: 'edit' //edit display
 		},
 		uploadImg: {
 			default: null

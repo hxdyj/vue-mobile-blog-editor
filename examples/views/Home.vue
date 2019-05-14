@@ -94,7 +94,7 @@ export default {
 		}
 	},
 	mounted() {
-		// this.$refs.editor.setData(this.list)
+		this.$refs.editor.setData(this.list)
 	},
 	methods: {
 		getList() {
