@@ -1,3 +1,7 @@
+## v0.0.27
+
+1. fixed top bar tip.
+
 ## v0.0.26
 
 1. fixed text css white space to pre wrap.
