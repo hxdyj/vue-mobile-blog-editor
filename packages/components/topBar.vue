@@ -4,7 +4,7 @@
 			<div class="top-bar-item" v-for="(top,index) in topList" :key="index">
 				<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_text.png'" title="文本" v-if="top.type=='text'" alt class="iconfont-comp" style="cursor: move;">
 				<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img_2.png'" title="图片" v-if="top.type=='img'" alt class="iconfont-comp" style="cursor: move;">
-				<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img.png'" title="帮助" v-if="top.type=='split'" alt class="iconfont-comp" style="cursor: move;">
+				<img :src="'https://scdn.yourbay.net/vue_mobile_blog_editor/icon/icon_comp_img.png'" title="分隔线" v-if="top.type=='split'" alt class="iconfont-comp" style="cursor: move;">
 
 				<!-- <i class="iconfont-comp top-bar-icon" style="font-size:26px;" title="文本" v-if="top.type=='text'">&#xe607;</i>
 				<i class="iconfont-comp top-bar-icon" title="图片" v-if="top.type=='img'">&#xe62b;</i>
